@@ -1,6 +1,5 @@
 <!doctype html>
-
-<html class="dark" lang="es">
+<html class="dark" lang="es" style="">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -14,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
-    <script id="tailwind-config">
+    <script data-purpose="tailwind-configuration" id="tailwind-config">
       tailwind.config = {
         darkMode: 'class',
         theme: {
@@ -139,7 +138,7 @@
         },
       };
     </script>
-    <style>
+    <style data-purpose="custom-theme-styles">
       .glow-hover:hover {
         box-shadow: 0 0 20px rgba(34, 81, 234, 0.15);
         border-color: rgba(255, 255, 255, 0.1);
@@ -334,7 +333,7 @@
   <body
     class="bg-pitch-black text-on-surface font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-pure-white"
   >
-    <!-- Navigation -->
+    <!-- BEGIN: MainHeader -->
     <nav
       class="future-nav fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/10 transition-all duration-300"
     >
@@ -378,10 +377,11 @@
         </button>
       </div>
     </nav>
-    <main class="pt-20">
-      <!-- 1. Hero Section -->
+    <!-- END: MainHeader -->
+    <main class="pt-20 px-gutter">
+      <!-- BEGIN: HeroSection -->
       <section
-        class="relative min-h-[90vh] flex items-center px-gutter py-20 lg:py-section-padding bg-pitch-black bg-dot-grid bg-dot-grid-size relative overflow-hidden"
+        class="relative min-h-[90vh] flex items-center py-20 lg:py-section-padding bg-pitch-black bg-dot-grid bg-dot-grid-size overflow-hidden"
       >
         <!-- Decorative Elements -->
         <div
@@ -484,7 +484,7 @@
             <img
               alt="Equipo de HeadTeam revisando un panel de rendimiento de marketing"
               class="w-full h-full object-cover object-center rounded-lg opacity-90"
-              src="assets/headteam-strategy-session.png"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjNWTQCqFSz3UUkBgJcfiMEgf0pmfEVy6FgWGFrO7FXjvClEEzwukeGDSfK7DBddS0300_fyfyAltm7gMq__wtOwkYuNjFeE-Sf4Fv9okaUcFBR9tNmvjOPj-KBN-pwujDxXho0IQHthHU1-BgrCpVsX1s6NCPl6-Bhg3LwNCXwpcjdmH2lYb6XO3_Kr8jiBSxysA-70btVtKBb9iqzh_cUJH4JyIQ8Crct7adzkP1ST8DIXye4Ojk2s0caoTHJ5UIr5aNqvqsiNt0"
             />
             <div
               class="absolute inset-3 lg:inset-4 rounded-lg bg-gradient-to-t from-pitch-black/70 via-transparent to-transparent pointer-events-none"
@@ -519,28 +519,32 @@
           </div>
         </div>
       </section>
+      <!-- END: HeroSection -->
+      <!-- BEGIN: Marquee -->
       <div
         class="future-marquee font-label-caps text-label-caps text-on-surface-variant"
       >
-        <span>
+        <span class="">
           ESTRATEGIA / CREATIVIDAD / EJECUCIÓN / MARCA / CAPTACIÓN / CONTENIDOS
           / MEDICIÓN / ESTRATEGIA / CREATIVIDAD / EJECUCIÓN / MARCA / CAPTACIÓN
           / CONTENIDOS / MEDICIÓN /
         </span>
       </div>
-      <!-- 2. Problem Block -->
+      <!-- END: Marquee -->
+      <!-- BEGIN: ProblemSection -->
       <section
         class="px-gutter py-20 lg:py-section-padding bg-surface-container-lowest relative border-t border-white/5"
       >
         <div class="max-w-container-max mx-auto">
-          <div class="mb-16 max-w-3xl">
+          <div class="mb-16 max-w-2xl">
             <p
               class="font-label-caps text-label-caps text-primary-container mb-4"
             >
               EL PROBLEMA
             </p>
             <h2 class="font-headline-lg text-headline-lg text-pure-white mb-5">
-              Tu empresa no necesita publicar más. <br />
+              Tu empresa no necesita
+              <span class="inline-block">publicar más.</span> <br />
               <span class="text-primary-container text-glow"
                 >Necesita una dirección clara.</span
               >
@@ -692,7 +696,8 @@
           </div>
         </div>
       </section>
-      <!-- 3. Solution Block -->
+      <!-- END: ProblemSection -->
+      <!-- BEGIN: SolutionSection -->
       <section
         class="px-gutter py-20 lg:py-section-padding bg-pitch-black border-t border-white/5"
       >
@@ -797,21 +802,31 @@
           </div>
         </div>
       </section>
-      <!-- 4. "Para quién es" Section -->
+      <!-- END: SolutionSection -->
+      <!-- BEGIN: TargetAudienceSection -->
       <section
-        class="future-blue-band px-gutter py-20 lg:py-section-padding relative overflow-hidden"
+        class="future-blue-band py-20 lg:py-section-padding relative overflow-hidden"
       >
         <div
-          class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvc3ZnPg==')] opacity-30 mix-blend-overlay"
-        ></div>
-        <div class="max-w-container-max mx-auto text-center relative z-10">
+          class="absolute inset-0 z-0 pointer-events-none opacity-5 bg-cover bg-center"
+        >
+          <img
+            src="https://lh3.googleusercontent.com/aida/AP1WRLsSGq1lD4jmCfEXlnNAStbZGoPvAmFwnHtSR-PSyMLVM-GdK7_dxt1lqEVY1H7qM5QRux8YSb9sqBcROeYqOlq7TSpIr61WqEqyVEa070oSj6OjxqkV3l4vGmXxBEa4TcZROP_KQnPuKbpMfx9IIDNtEV9DqOPdc3BWjIr8v8N9Uar89bs4JdOHVqsgiZrU6E65YndionUJR6HAOujYxMwRDKUOYRv3GvL9ZrGaQme_pOSMGrPfmzMqXhxv"
+            alt=""
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+        <div
+          class="max-w-container-max mx-auto text-center relative z-10 px-gutter"
+        >
           <h2
             class="font-headline-lg text-headline-lg text-pure-white mb-6 max-w-4xl mx-auto tracking-tight"
           >
             Para empresas que quieren tomarse el marketing en serio.
           </h2>
           <p
-            class="font-body-lg text-body-lg text-on-primary-container/90 max-w-3xl mx-auto mb-12"
+            class="font-body-lg text-body-lg max-w-3xl mx-auto mb-12 text-pure-white"
+            style="opacity: 0"
           >
             HeadTeam es para negocios que necesitan algo más que publicar
             contenido: empresas que quieren profesionalizar su marketing,
@@ -827,7 +842,7 @@
               <p class="text-pure-white font-medium mb-2">
                 Sin departamento interno
               </p>
-              <p class="text-on-primary-container/80 font-body-md text-body-md">
+              <p class="font-body-md text-body-md text-pure-white">
                 Acompañamos a empresas que necesitan una dirección de marketing
                 externa, estable y multidisciplinar.
               </p>
@@ -838,7 +853,7 @@
               <p class="text-pure-white font-medium mb-2">
                 Con equipo que necesita refuerzo
               </p>
-              <p class="text-on-primary-container/80 font-body-md text-body-md">
+              <p class="font-body-md text-body-md text-pure-white">
                 Sumamos visión estratégica, criterio creativo y capacidad de
                 ejecución para ordenar prioridades.
               </p>
@@ -849,14 +864,14 @@
               <p class="text-pure-white font-medium mb-2">
                 Con visión de crecimiento
               </p>
-              <p class="text-on-primary-container/80 font-body-md text-body-md">
+              <p class="font-body-md text-body-md text-pure-white">
                 Trabajamos con marcas que entienden el marketing como una
                 inversión y quieren hacerlo avanzar con método.
               </p>
             </div>
           </div>
           <p
-            class="font-body-md text-body-md text-on-primary-container/80 max-w-3xl mx-auto mb-12"
+            class="font-body-md text-body-md max-w-3xl mx-auto mb-12 text-pure-white"
           >
             Si buscas una solución puntual o únicamente gestionar una red
             social, probablemente no seamos la opción adecuada. Si buscas un
@@ -870,40 +885,41 @@
           </button>
         </div>
       </section>
-      <!-- 5. Premium Filter Section -->
+      <!-- END: TargetAudienceSection -->
+      <!-- BEGIN: PremiumFilterSection -->
       <section
         class="px-gutter py-20 lg:py-section-padding bg-surface-container-lowest border-t border-white/5"
       >
-        <div class="max-w-container-max mx-auto text-center max-w-3xl">
-          <h2 class="font-headline-lg text-headline-lg text-pure-white mb-6">
-            Una colaboración pensada para proyectos con
+        <div class="mb-16 max-w-2xl">
+          <p
+            class="font-label-caps text-label-caps text-primary-container mb-4"
+          >
+            EL PROBLEMA
+          </p>
+          <h2 class="font-headline-lg text-headline-lg text-pure-white mb-5">
+            Tu empresa no necesita
+            <span class="inline-block">publicar más.</span> <br />
             <span class="text-primary-container text-glow"
-              >visión de crecimiento.</span
+              >Necesita una dirección clara.</span
             >
           </h2>
-          <p class="font-body-lg text-body-lg text-on-surface-variant mb-4">
-            Para garantizar un trabajo estratégico, constante y bien ejecutado,
-            nuestros proyectos están orientados a empresas que buscan una
-            colaboración mensual estable o proyectos de alto valor.
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+            Muchas empresas invierten en marketing, pero no siempre lo hacen con
+            una estrategia común. Publican en redes sociales, lanzan campañas,
+            actualizan la web, crean contenidos o prueban acciones puntuales sin
+            que todo responda a una misma dirección.
           </p>
-          <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-            Trabajamos con compañías que entienden el marketing como una
-            inversión y no como una tarea pendiente. Así podemos pensar,
-            ejecutar, medir y mejorar con continuidad.
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Cuando cada acción va por su cuenta, el resultado suele ser el
+            mismo: esfuerzo disperso, mensajes poco consistentes y oportunidades
+            comerciales que se pierden. En HeadTeam ayudamos a dejar atrás el
+            marketing improvisado para trabajar con una visión más profesional,
+            medible y orientada al crecimiento.
           </p>
-          <div
-            class="future-button-secondary inline-block bg-surface-container-low border border-white/10 px-6 py-3"
-          >
-            <p class="font-button text-pure-white flex items-center gap-2">
-              <span class="material-symbols-outlined text-primary-container"
-                >info</span
-              >
-              Proyectos mensuales recomendados a partir de 3.000 €
-            </p>
-          </div>
         </div>
       </section>
-      <!-- 6. Method Section -->
+      <!-- END: PremiumFilterSection -->
+      <!-- BEGIN: MethodSection -->
       <section class="px-gutter py-20 lg:py-section-padding bg-pitch-black">
         <div class="max-w-container-max mx-auto">
           <div class="text-center mb-16">
@@ -1007,7 +1023,8 @@
           </div>
         </div>
       </section>
-      <!-- 7. Authority/Social Proof Section -->
+      <!-- END: MethodSection -->
+      <!-- BEGIN: AuthoritySection -->
       <section
         class="px-gutter py-20 lg:py-section-padding bg-surface-container-lowest border-t border-white/5"
       >
@@ -1019,8 +1036,11 @@
               <h2
                 class="font-headline-lg text-headline-lg text-pure-white mb-6"
               >
-                Qué podemos ordenar, construir y hacer crecer
-                <span class="text-primary-container text-glow">contigo.</span>
+                Tu empresa no necesita
+                <span class="inline-block">publicar más.</span> <br />
+                <span class="text-primary-container text-glow"
+                  >Necesita una dirección clara.</span
+                >
               </h2>
               <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
                 Nuestro enfoque conecta estrategia, marca, captación, contenido
@@ -1094,10 +1114,12 @@
           </div>
         </div>
       </section>
-      <!-- Final CTA -->
+      <!-- END: AuthoritySection -->
+      <!-- BEGIN: CTASection -->
       <section
         class="px-gutter py-20 lg:py-section-padding bg-pitch-black border-t border-white/5 relative overflow-hidden"
       >
+        <div class="absolute inset-0 z-0 pointer-events-none opacity-20"></div>
         <div
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-container rounded-full blur-[120px] opacity-20 pointer-events-none"
         ></div>
@@ -1123,8 +1145,9 @@
           </button>
         </div>
       </section>
+      <!-- END: CTASection -->
     </main>
-    <!-- Footer -->
+    <!-- BEGIN: MainFooter -->
     <footer
       class="bg-pitch-black w-full py-stack-lg border-t border-surface-container-lowest"
     >
@@ -1158,7 +1181,7 @@
             class="text-primary font-body-md text-body-md hover:text-pure-white transition-colors duration-300 opacity-80 hover:opacity-100"
             href="#"
             >Contacto</a
-          >git init
+          >
         </div>
         <div
           class="font-label-caps text-label-caps text-on-surface-variant opacity-60"
@@ -1167,5 +1190,6 @@
         </div>
       </div>
     </footer>
+    <!-- END: MainFooter -->
   </body>
 </html>
