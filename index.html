@@ -315,6 +315,37 @@
         padding-block: 12px;
         animation: marquee 22s linear infinite;
       }
+      html {
+        scroll-behavior: smooth;
+      }
+      .contact-field {
+        width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 0;
+        background: rgba(0, 0, 0, 0.55);
+        color: #ffffff;
+        font-family: Manrope, sans-serif;
+        transition:
+          border-color 180ms ease,
+          box-shadow 180ms ease,
+          background 180ms ease;
+      }
+      .contact-field::placeholder {
+        color: rgba(196, 197, 216, 0.5);
+      }
+      .contact-field:hover {
+        border-color: rgba(255, 255, 255, 0.24);
+      }
+      .contact-field:focus {
+        border-color: #2251ea;
+        background: rgba(10, 10, 12, 0.86);
+        box-shadow: 0 0 0 3px rgba(34, 81, 234, 0.18);
+        outline: none;
+      }
+      .contact-field option {
+        background: #131313;
+        color: #ffffff;
+      }
       @keyframes marquee {
         from {
           transform: translateX(0);
@@ -360,16 +391,17 @@
           >
           <a
             class="future-link text-on-surface-variant font-medium hover:text-primary transition-colors duration-300"
-            href="#"
+            href="#contacto"
             >Contacto</a
           >
         </div>
         <div class="hidden md:flex items-center">
-          <button
+          <a
             class="future-button bg-primary-container text-pure-white font-button text-button px-6 py-3 hover:bg-inverse-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform"
+            href="#contacto"
           >
             Solicitar diagnóstico estratégico
-          </button>
+          </a>
         </div>
         <!-- Mobile Menu Button -->
         <button class="md:hidden text-on-surface p-2">
@@ -428,15 +460,16 @@
               >
             </p>
             <div class="flex flex-col sm:flex-row gap-4 pt-4">
-              <button
+              <a
                 class="future-button bg-primary-container text-pure-white font-button text-button px-8 py-4 hover:bg-inverse-primary transition-all duration-300 flex items-center justify-center gap-2 group text-center leading-tight"
+                href="#contacto"
               >
                 Solicitar diagnóstico estratégico
                 <span
                   class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
                   >arrow_forward</span
                 >
-              </button>
+              </a>
               <button
                 class="future-button-secondary bg-transparent text-pure-white border border-white/20 font-button text-button px-8 py-4 hover:bg-white/5 hover:border-white/50 transition-all duration-300 flex items-center justify-center gap-2"
               >
@@ -873,11 +906,12 @@
             equipo que piense, planifique, ejecute y mida contigo, podemos
             ayudarte.
           </p>
-          <button
+          <a
             class="future-button bg-pitch-black text-pure-white font-button text-button px-8 py-4 hover:bg-surface-container-low transition-all duration-300 border border-white/10 shadow-xl"
+            href="#contacto"
           >
             Solicitar diagnóstico estratégico
-          </button>
+          </a>
         </div>
       </section>
       <!-- END: TargetAudienceSection -->
@@ -1131,18 +1165,143 @@
             valoración estratégica para ver cómo podemos ayudarte a ordenar,
             profesionalizar y hacer crecer tu presencia digital.
           </p>
-          <button
+          <a
             class="future-button bg-primary-container text-pure-white font-button text-button px-8 py-4 hover:bg-inverse-primary transition-all duration-300 shadow-lg shadow-primary-container/30 hover:shadow-primary-container/50 inline-flex items-center gap-2 group"
+            href="#contacto"
           >
             Solicitar diagnóstico estratégico
             <span
               class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
               >arrow_forward</span
             >
-          </button>
+          </a>
         </div>
       </section>
       <!-- END: CTASection -->
+      <!-- BEGIN: ContactSection -->
+      <section
+        class="relative overflow-hidden border-t border-white/10 bg-surface-container-lowest px-gutter py-20 lg:py-section-padding"
+        id="contacto"
+      >
+        <div
+          class="absolute -right-64 top-0 h-[560px] w-[560px] rounded-full bg-primary-container opacity-15 blur-[140px] pointer-events-none"
+        ></div>
+        <div
+          class="absolute inset-0 bg-dot-grid bg-dot-grid-size opacity-30 pointer-events-none"
+        ></div>
+        <div
+          class="relative z-10 mx-auto grid max-w-container-max grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16"
+        >
+          <div class="lg:col-span-5 lg:pt-8">
+            <div
+              class="future-kicker mb-6 inline-flex items-center gap-2 border border-primary-container/30 bg-primary-container/10 px-3 py-2 font-label-caps text-label-caps text-primary-fixed-dim"
+            >
+              <span class="h-2 w-2 rounded-full bg-primary-container"></span>
+              PRIMERA VALORACIÓN
+            </div>
+            <h2 class="mb-6 font-headline-lg text-headline-lg text-pure-white">
+              Pongamos dirección a tu
+              <span class="text-primary-container text-glow">marketing.</span>
+            </h2>
+            <p class="mb-10 max-w-xl font-body-lg text-body-lg text-on-surface-variant">
+              Cuéntanos dónde está tu empresa y qué quieres conseguir.
+              Revisaremos tu caso y te contactaremos para valorar el siguiente
+              paso con criterio.
+            </p>
+            <div class="space-y-5 border-t border-white/10 pt-8">
+              <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined mt-0.5 text-primary-container">schedule</span>
+                <div>
+                  <p class="font-button text-button text-pure-white">Respuesta en 1–2 días laborables</p>
+                  <p class="mt-1 font-body-md text-sm text-on-surface-variant">Sin automatismos ni respuestas genéricas.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined mt-0.5 text-primary-container">lock</span>
+                <div>
+                  <p class="font-button text-button text-pure-white">Tus datos, tratados con confidencialidad</p>
+                  <p class="mt-1 font-body-md text-sm text-on-surface-variant">Solo los utilizaremos para valorar tu consulta.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="future-panel border border-white/10 p-6 sm:p-8 lg:col-span-7 lg:p-10">
+            <form class="relative z-10" id="contact-form">
+              <div class="mb-8 flex items-center justify-between border-b border-white/10 pb-5">
+                <div>
+                  <p class="font-label-caps text-label-caps text-primary-fixed-dim">SOLICITUD // 01</p>
+                  <h3 class="mt-2 font-headline-md text-2xl text-pure-white sm:text-headline-md">Hablemos de tu proyecto</h3>
+                </div>
+                <span class="material-symbols-outlined hidden text-3xl text-primary-container sm:block">north_east</span>
+              </div>
+
+              <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <label class="block">
+                  <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">NOMBRE Y APELLIDOS *</span>
+                  <input class="contact-field px-4 py-3.5" name="nombre" placeholder="Tu nombre" required type="text" autocomplete="name" />
+                </label>
+                <label class="block">
+                  <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">EMAIL PROFESIONAL *</span>
+                  <input class="contact-field px-4 py-3.5" name="email" placeholder="nombre@empresa.com" required type="email" autocomplete="email" />
+                </label>
+                <label class="block">
+                  <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">EMPRESA *</span>
+                  <input class="contact-field px-4 py-3.5" name="empresa" placeholder="Nombre de la empresa" required type="text" autocomplete="organization" />
+                </label>
+                <label class="block">
+                  <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">TELÉFONO</span>
+                  <input class="contact-field px-4 py-3.5" name="telefono" placeholder="+34 600 000 000" type="tel" autocomplete="tel" />
+                </label>
+                <label class="block">
+                  <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">¿QUÉ NECESITAS? *</span>
+                  <select class="contact-field px-4 py-3.5" name="necesidad" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option>Estrategia de marketing</option>
+                    <option>Departamento de marketing externo</option>
+                    <option>Marca y comunicación</option>
+                    <option>Captación y crecimiento</option>
+                    <option>Otro proyecto</option>
+                  </select>
+                </label>
+                <label class="block">
+                  <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">INVERSIÓN MENSUAL PREVISTA *</span>
+                  <select class="contact-field px-4 py-3.5" name="inversion" required>
+                    <option value="" disabled selected>Selecciona un rango</option>
+                    <option>3.000 € – 5.000 €</option>
+                    <option>5.000 € – 10.000 €</option>
+                    <option>Más de 10.000 €</option>
+                    <option>Proyecto puntual de alto valor</option>
+                  </select>
+                </label>
+              </div>
+
+              <label class="mt-6 block">
+                <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">CUÉNTANOS EL RETO *</span>
+                <textarea class="contact-field min-h-[132px] resize-y px-4 py-3.5" name="mensaje" placeholder="Situación actual, objetivos y cualquier contexto que debamos conocer..." required></textarea>
+              </label>
+
+              <label class="mt-6 flex cursor-pointer items-start gap-3 text-on-surface-variant">
+                <input class="mt-1 h-4 w-4 border-white/20 bg-black text-primary-container focus:ring-primary-container focus:ring-offset-0" name="privacidad" required type="checkbox" value="aceptada" />
+                <span class="font-body-md text-sm leading-6">He leído y acepto la política de privacidad y el tratamiento de mis datos para responder a esta solicitud. *</span>
+              </label>
+
+              <div class="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <p class="font-label-caps text-[11px] leading-5 text-on-surface-variant">* CAMPOS OBLIGATORIOS</p>
+                <button class="future-button inline-flex items-center justify-center gap-2 bg-primary-container px-8 py-4 font-button text-button text-pure-white transition-all duration-300 hover:bg-inverse-primary" type="submit">
+                  Enviar solicitud
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+              </div>
+              <div class="mt-6 hidden border border-primary-container/30 bg-primary-container/10 p-4 text-primary-fixed" id="form-success" role="status">
+                <p class="font-button text-button">Solicitud preparada correctamente.</p>
+                <p class="mt-1 font-body-md text-sm text-on-surface-variant">Gracias. En la versión final, este formulario se conectará con vuestro canal de contacto.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- END: ContactSection -->
     </main>
     <!-- BEGIN: MainFooter -->
     <footer
@@ -1176,7 +1335,7 @@
           >
           <a
             class="text-primary font-body-md text-body-md hover:text-pure-white transition-colors duration-300 opacity-80 hover:opacity-100"
-            href="#"
+            href="#contacto"
             >Contacto</a
           >
         </div>
@@ -1188,5 +1347,11 @@
       </div>
     </footer>
     <!-- END: MainFooter -->
+    <script>
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        document.getElementById('form-success').classList.remove('hidden');
+      });
+    </script>
   </body>
 </html>
