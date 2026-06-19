@@ -189,6 +189,8 @@
         text-transform: uppercase;
       }
       .future-button {
+        --future-cut-size: 14px;
+        --future-cut-stroke: rgba(255, 255, 255, 0.22);
         position: relative;
         border-radius: 0;
         clip-path: polygon(
@@ -204,11 +206,15 @@
           0 0 34px rgba(34, 81, 234, 0.34);
       }
       .future-button:hover {
+        --future-cut-stroke: rgba(255, 255, 255, 0.38);
         box-shadow:
           0 0 0 1px rgba(255, 255, 255, 0.2) inset,
           0 0 54px rgba(34, 81, 234, 0.58);
       }
       .future-button-secondary {
+        --future-cut-size: 12px;
+        --future-cut-stroke: rgba(255, 255, 255, 0.28);
+        position: relative;
         border-radius: 0;
         clip-path: polygon(
           0 0,
@@ -218,6 +224,33 @@
           12px 100%,
           0 calc(100% - 12px)
         );
+      }
+      .future-button-secondary:hover {
+        --future-cut-stroke: rgba(255, 255, 255, 0.55);
+      }
+      .future-button::after,
+      .future-button-secondary::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(
+              45deg,
+              transparent calc(50% - 1px),
+              var(--future-cut-stroke) calc(50% - 1px),
+              var(--future-cut-stroke) calc(50% + 1px),
+              transparent calc(50% + 1px)
+            )
+            top right / var(--future-cut-size) var(--future-cut-size) no-repeat,
+          linear-gradient(
+              45deg,
+              transparent calc(50% - 1px),
+              var(--future-cut-stroke) calc(50% - 1px),
+              var(--future-cut-stroke) calc(50% + 1px),
+              transparent calc(50% + 1px)
+            )
+            bottom left / var(--future-cut-size) var(--future-cut-size) no-repeat;
       }
       .future-panel {
         position: relative;
