@@ -313,12 +313,39 @@
       .future-marquee-track {
         display: flex;
         width: max-content;
-        animation: marquee 80s linear infinite;
+        animation: marquee 64s linear infinite;
         will-change: transform;
       }
       .future-marquee-copy {
+        display: flex;
+        align-items: center;
         flex-shrink: 0;
-        padding-block: 12px;
+      }
+      .client-logo-placeholder {
+        display: flex;
+        min-width: 220px;
+        height: 72px;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding-inline: 32px;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        color: rgba(196, 197, 216, 0.62);
+        transition:
+          color 180ms ease,
+          background 180ms ease;
+      }
+      .client-logo-placeholder:hover {
+        color: #ffffff;
+        background: rgba(34, 81, 234, 0.08);
+      }
+      .client-logo-mark {
+        width: 10px;
+        height: 10px;
+        flex-shrink: 0;
+        border: 1px solid rgba(34, 81, 234, 0.9);
+        transform: rotate(45deg);
+        box-shadow: 0 0 14px rgba(34, 81, 234, 0.28);
       }
       html {
         scroll-behavior: smooth;
@@ -561,21 +588,33 @@
         class="future-marquee font-label-caps text-label-caps text-on-surface-variant"
       >
         <span class="sr-only"
-          >Estrategia, creatividad, ejecución, marca, captación, contenidos y
-          medición.</span
+          >Marcas que confían en HeadTeam. Espacios provisionales para cinco
+          logos de clientes.</span
         >
         <div class="future-marquee-track" aria-hidden="true">
           <span class="future-marquee-copy">
-            ESTRATEGIA / CREATIVIDAD / EJECUCIÓN / MARCA / CAPTACIÓN / CONTENIDOS / MEDICIÓN /
-            ESTRATEGIA / CREATIVIDAD / EJECUCIÓN / MARCA / CAPTACIÓN / CONTENIDOS / MEDICIÓN /
-            ESTRATEGIA / CREATIVIDAD / EJECUCIÓN / MARCA / CAPTACIÓN / CONTENIDOS / MEDICIÓN /
-            ESTRATEGIA / CREATIVIDAD / EJECUCIÓN / MARCA / CAPTACIÓN / CONTENIDOS / MEDICIÓN /
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 01</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 02</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 03</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 04</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 05</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 01</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 02</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 03</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 04</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 05</span>
           </span>
           <span class="future-marquee-copy">
-            ESTRATEGIA / CREATIVIDAD / EJECUCIÓN / MARCA / CAPTACIÓN / CONTENIDOS / MEDICIÓN /
-            ESTRATEGIA / CREATIVIDAD / EJECUCIÓN / MARCA / CAPTACIÓN / CONTENIDOS / MEDICIÓN /
-            ESTRATEGIA / CREATIVIDAD / EJECUCIÓN / MARCA / CAPTACIÓN / CONTENIDOS / MEDICIÓN /
-            ESTRATEGIA / CREATIVIDAD / EJECUCIÓN / MARCA / CAPTACIÓN / CONTENIDOS / MEDICIÓN /
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 01</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 02</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 03</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 04</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 05</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 01</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 02</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 03</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 04</span>
+            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 05</span>
           </span>
         </div>
       </div>
