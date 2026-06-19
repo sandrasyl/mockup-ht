@@ -318,7 +318,9 @@
       }
       .future-marquee-copy {
         display: flex;
+        width: max(100vw, 1540px);
         align-items: center;
+        justify-content: space-around;
         flex-shrink: 0;
       }
       .client-logo-placeholder {
@@ -327,25 +329,27 @@
         height: 72px;
         align-items: center;
         justify-content: center;
-        gap: 12px;
         padding-inline: 32px;
         border-right: 1px solid rgba(255, 255, 255, 0.08);
-        color: rgba(196, 197, 216, 0.62);
-        transition:
-          color 180ms ease,
-          background 180ms ease;
+        transition: background 180ms ease;
       }
       .client-logo-placeholder:hover {
-        color: #ffffff;
         background: rgba(34, 81, 234, 0.08);
       }
-      .client-logo-mark {
-        width: 10px;
-        height: 10px;
-        flex-shrink: 0;
-        border: 1px solid rgba(34, 81, 234, 0.9);
-        transform: rotate(45deg);
-        box-shadow: 0 0 14px rgba(34, 81, 234, 0.28);
+      .client-logo-placeholder img {
+        width: auto;
+        height: auto;
+        max-width: 150px;
+        max-height: 44px;
+        object-fit: contain;
+        opacity: 0.62;
+        transition:
+          opacity 180ms ease,
+          transform 180ms ease;
+      }
+      .client-logo-placeholder:hover img {
+        opacity: 1;
+        transform: scale(1.04);
       }
       html {
         scroll-behavior: smooth;
@@ -588,33 +592,27 @@
         class="future-marquee font-label-caps text-label-caps text-on-surface-variant"
       >
         <span class="sr-only"
-          >Marcas que confían en HeadTeam. Espacios provisionales para cinco
-          logos de clientes.</span
+          >Marcas que confían en HeadTeam: Jakala, Mountain, Lyra, Vivadogs,
+          Vianoleo, Revio y Cponet.</span
         >
         <div class="future-marquee-track" aria-hidden="true">
           <span class="future-marquee-copy">
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 01</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 02</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 03</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 04</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 05</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 01</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 02</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 03</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 04</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 05</span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/jakala.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/mountain.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/lyra.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/vivadogs.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/vianoleo.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/revio.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/cponet.png" /></span>
           </span>
           <span class="future-marquee-copy">
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 01</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 02</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 03</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 04</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 05</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 01</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 02</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 03</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 04</span>
-            <span class="client-logo-placeholder"><span class="client-logo-mark"></span>CLIENTE 05</span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/jakala.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/mountain.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/lyra.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/vivadogs.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/vianoleo.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/revio.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/cponet.png" /></span>
           </span>
         </div>
       </div>
