@@ -146,6 +146,12 @@
       .text-glow {
         text-shadow: 0 0 20px rgba(34, 81, 234, 0.5);
       }
+      .solution-title-accent {
+        color: #4f7dff;
+        text-shadow:
+          0 2px 10px rgba(0, 0, 0, 0.82),
+          0 0 28px rgba(34, 81, 234, 0.72);
+      }
       body {
         background:
           radial-gradient(
@@ -316,6 +322,193 @@
           linear-gradient(90deg, rgba(34, 81, 234, 0.4), transparent 28%),
           linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 18%);
         opacity: 0.42;
+      }
+      .video-holo-shell {
+        position: relative;
+        isolation: isolate;
+        filter: drop-shadow(0 28px 70px rgba(0, 0, 0, 0.58));
+      }
+      .video-holo-shell::before {
+        content: '';
+        position: absolute;
+        inset: -34px -46px;
+        z-index: -2;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            circle at 50% 18%,
+            rgba(34, 81, 234, 0.36),
+            transparent 42%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(34, 81, 234, 0.18),
+            transparent 62%
+          );
+        filter: blur(18px);
+        opacity: 0.9;
+      }
+      .video-holo-shell::after {
+        content: '';
+        position: absolute;
+        inset: -10px;
+        z-index: -1;
+        pointer-events: none;
+        background:
+          linear-gradient(135deg, rgba(34, 81, 234, 0.7), transparent 32%),
+          linear-gradient(315deg, rgba(184, 196, 255, 0.26), transparent 26%);
+        clip-path: polygon(
+          0 18px,
+          18px 0,
+          calc(100% - 28px) 0,
+          100% 28px,
+          100% calc(100% - 18px),
+          calc(100% - 18px) 100%,
+          28px 100%,
+          0 calc(100% - 28px)
+        );
+        opacity: 0.5;
+      }
+      .video-holo-frame {
+        position: relative;
+        overflow: hidden;
+        padding: 13px;
+        background:
+          linear-gradient(
+            145deg,
+            rgba(11, 18, 45, 0.96),
+            rgba(0, 0, 0, 0.94) 58%
+          ),
+          #000000;
+        border: 1px solid rgba(184, 196, 255, 0.18);
+        clip-path: polygon(
+          0 22px,
+          22px 0,
+          calc(100% - 34px) 0,
+          100% 34px,
+          100% calc(100% - 22px),
+          calc(100% - 22px) 100%,
+          34px 100%,
+          0 calc(100% - 34px)
+        );
+        box-shadow:
+          0 0 0 1px rgba(34, 81, 234, 0.24) inset,
+          0 0 42px rgba(34, 81, 234, 0.18);
+      }
+      .video-holo-frame::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background:
+          linear-gradient(90deg, rgba(34, 81, 234, 0.18), transparent 28%),
+          repeating-linear-gradient(
+            90deg,
+            transparent 0 24px,
+            rgba(184, 196, 255, 0.045) 24px 25px
+          ),
+          repeating-linear-gradient(
+            0deg,
+            transparent 0 32px,
+            rgba(34, 81, 234, 0.045) 32px 33px
+          );
+        opacity: 0.62;
+      }
+      .video-holo-frame::after {
+        content: '';
+        position: absolute;
+        inset: 9px;
+        z-index: 2;
+        pointer-events: none;
+        border: 1px solid rgba(34, 81, 234, 0.34);
+        clip-path: polygon(
+          0 16px,
+          16px 0,
+          calc(100% - 24px) 0,
+          100% 24px,
+          100% calc(100% - 16px),
+          calc(100% - 16px) 100%,
+          24px 100%,
+          0 calc(100% - 24px)
+        );
+      }
+      .video-holo-screen {
+        position: relative;
+        z-index: 3;
+        overflow: hidden;
+        background: #000000;
+        clip-path: polygon(
+          0 15px,
+          15px 0,
+          calc(100% - 20px) 0,
+          100% 20px,
+          100% calc(100% - 15px),
+          calc(100% - 15px) 100%,
+          20px 100%,
+          0 calc(100% - 20px)
+        );
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, 0.08),
+          0 0 32px rgba(34, 81, 234, 0.18) inset;
+      }
+      .video-holo-screen::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 20;
+        pointer-events: none;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 18%),
+          repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.035) 0 1px,
+            transparent 1px 7px
+          );
+        mix-blend-mode: screen;
+        opacity: 0.32;
+      }
+      .video-holo-corner {
+        position: absolute;
+        z-index: 30;
+        width: 38px;
+        height: 38px;
+        pointer-events: none;
+        border-color: rgba(184, 196, 255, 0.86);
+        filter: drop-shadow(0 0 10px rgba(34, 81, 234, 0.82));
+      }
+      .video-holo-corner.is-top-left {
+        left: 0;
+        top: 0;
+        border-left: 2px solid;
+        border-top: 2px solid;
+      }
+      .video-holo-corner.is-top-right {
+        right: 0;
+        top: 0;
+        border-right: 2px solid;
+        border-top: 2px solid;
+      }
+      .video-holo-corner.is-bottom-left {
+        bottom: 0;
+        left: 0;
+        border-bottom: 2px solid;
+        border-left: 2px solid;
+      }
+      .video-holo-corner.is-bottom-right {
+        bottom: 0;
+        right: 0;
+        border-bottom: 2px solid;
+        border-right: 2px solid;
+      }
+      .video-holo-tag {
+        position: absolute;
+        z-index: 31;
+        pointer-events: none;
+        border: 1px solid rgba(34, 81, 234, 0.42);
+        background: rgba(0, 0, 0, 0.74);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 24px rgba(34, 81, 234, 0.18);
       }
       .future-card {
         position: relative;
@@ -693,164 +886,183 @@
       <!-- END: Marquee -->
       <!-- BEGIN: ProblemSection -->
       <section
-        class="px-gutter py-20 lg:py-section-padding bg-surface-container-lowest relative border-t border-white/5"
+        class="px-gutter py-20 lg:py-section-padding bg-surface-container-lowest relative overflow-hidden border-t border-white/5"
       >
-        <div class="max-w-container-max mx-auto">
-          <div class="mb-16 max-w-3xl">
-            <p
-              class="font-label-caps text-label-caps text-primary-container mb-4"
-            >
-              EL PROBLEMA
-            </p>
-            <h2 class="font-headline-lg text-headline-lg text-pure-white mb-5">
-              El problema no es hacer poco. <br />
-              <span class="text-primary-container text-glow"
-                >Es hacer sin una estrategia común.</span
+        <div
+          class="absolute -right-56 top-16 h-[520px] w-[520px] rounded-full bg-primary-container opacity-10 blur-[150px] pointer-events-none"
+        ></div>
+        <div
+          class="absolute inset-0 bg-dot-grid bg-dot-grid-size opacity-25 pointer-events-none"
+        ></div>
+        <div class="relative z-10 max-w-container-max mx-auto">
+          <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+            <div class="lg:col-span-5">
+              <p
+                class="font-label-caps text-label-caps text-primary-container mb-4"
               >
-            </h2>
-            <p class="font-body-md text-body-md text-on-surface-variant mb-4">
-              Muchas empresas invierten en marketing, pero no siempre lo hacen
-              con una estrategia común. Publican en redes sociales, lanzan
-              campañas, actualizan la web, crean contenidos o prueban acciones
-              puntuales sin que todo responda a una misma dirección.
-            </p>
-            <p class="font-body-md text-body-md text-on-surface-variant">
-              Cuando cada acción va por su cuenta, el resultado suele ser el
-              mismo: esfuerzo disperso, mensajes poco consistentes y
-              oportunidades comerciales que se pierden. En HeadTeam ayudamos a
-              dejar atrás el marketing improvisado para trabajar con una visión
-              más profesional, medible y orientada al crecimiento.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Problem Cards -->
-            <div
-              class="future-card bg-surface-container-low border border-white/5 rounded-xl p-6 glow-hover transition-all duration-300 flex flex-col group"
-            >
-              <div
-                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center mb-4 border border-white/5 group-hover:border-primary-container/30 transition-colors"
-              >
-                <span class="material-symbols-outlined text-primary-fixed-dim"
-                  >link_off</span
+                EL PROBLEMA
+              </p>
+              <h2 class="font-headline-lg text-headline-lg text-pure-white mb-5">
+                El problema no es hacer poco. <br />
+                <span class="text-primary-container text-glow"
+                  >Es hacer sin una estrategia común.</span
                 >
-              </div>
-              <h3
-                class="font-body-lg text-body-lg text-pure-white font-medium mb-2"
-              >
-                Acciones desconectadas
-              </h3>
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                Muchas empresas invierten en marketing, pero no siempre lo hacen
+                con una estrategia común. Publican en redes sociales, lanzan
+                campañas, actualizan la web, crean contenidos o prueban acciones
+                puntuales sin que todo responda a una misma dirección.
+              </p>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Cuando cada acción va por su cuenta, el resultado suele ser el
+                mismo: esfuerzo disperso, mensajes poco consistentes y
+                oportunidades comerciales que se pierden. En HeadTeam ayudamos a
+                dejar atrás el marketing improvisado para trabajar con una visión
+                más profesional, medible y orientada al crecimiento.
+              </p>
             </div>
-            <div
-              class="future-card bg-surface-container-low border border-white/5 rounded-xl p-6 glow-hover transition-all duration-300 flex flex-col group"
-            >
+
+            <div class="lg:col-span-7">
               <div
-                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center mb-4 border border-white/5 group-hover:border-primary-container/30 transition-colors"
+                class="relative overflow-hidden border border-white/10 bg-black/35 p-6 backdrop-blur-sm sm:p-8 lg:p-10"
               >
-                <span class="material-symbols-outlined text-primary-fixed-dim"
-                  >thumb_down</span
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-error-container/20 via-transparent to-primary-container/10 pointer-events-none"
+                ></div>
+                <div
+                  class="absolute left-8 right-8 top-1/2 hidden h-px bg-gradient-to-r from-error/50 via-outline/25 to-primary-container/60 lg:block"
+                ></div>
+                <div
+                  class="relative z-10 mb-8 flex flex-col gap-4 border-b border-white/10 pb-6 sm:flex-row sm:items-end sm:justify-between"
                 >
+                  <div>
+                    <p
+                      class="mb-2 font-label-caps text-[10px] tracking-widest text-error"
+                    >
+                      DIAGNÓSTICO DE DESORDEN
+                    </p>
+                    <h3 class="font-headline-md text-2xl text-pure-white">
+                      Muchas piezas activas. Poco sistema.
+                    </h3>
+                  </div>
+                  <p
+                    class="font-label-caps text-[10px] tracking-widest text-outline"
+                  >
+                    08 SEÑALES DETECTADAS
+                  </p>
+                </div>
+
+                <div class="relative z-10 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_180px] lg:items-stretch">
+                  <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div class="border-l border-error/50 bg-error-container/10 px-4 py-3">
+                      <p
+                        class="font-label-caps text-[10px] tracking-widest text-error"
+                      >
+                        01 / DESCONEXIÓN
+                      </p>
+                      <p class="mt-2 font-body-md text-body-md text-pure-white">
+                        Acciones desconectadas
+                      </p>
+                    </div>
+                    <div class="border-l border-error/50 bg-error-container/10 px-4 py-3">
+                      <p
+                        class="font-label-caps text-[10px] tracking-widest text-error"
+                      >
+                        02 / REDES
+                      </p>
+                      <p class="mt-2 font-body-md text-body-md text-pure-white">
+                        Contenido sin estrategia
+                      </p>
+                    </div>
+                    <div class="border-l border-error/50 bg-error-container/10 px-4 py-3">
+                      <p
+                        class="font-label-caps text-[10px] tracking-widest text-error"
+                      >
+                        03 / CONVERSIÓN
+                      </p>
+                      <p class="mt-2 font-body-md text-body-md text-pure-white">
+                        Campañas que no convierten
+                      </p>
+                    </div>
+                    <div class="border-l border-error/50 bg-error-container/10 px-4 py-3">
+                      <p
+                        class="font-label-caps text-[10px] tracking-widest text-error"
+                      >
+                        04 / EQUIPO
+                      </p>
+                      <p class="mt-2 font-body-md text-body-md text-pure-white">
+                        Proveedores dispersos
+                      </p>
+                    </div>
+                    <div class="border-l border-error/50 bg-error-container/10 px-4 py-3">
+                      <p
+                        class="font-label-caps text-[10px] tracking-widest text-error"
+                      >
+                        05 / MENSAJE
+                      </p>
+                      <p class="mt-2 font-body-md text-body-md text-pure-white">
+                        Comunicación poco consistente
+                      </p>
+                    </div>
+                    <div class="border-l border-error/50 bg-error-container/10 px-4 py-3">
+                      <p
+                        class="font-label-caps text-[10px] tracking-widest text-error"
+                      >
+                        06 / PLAN
+                      </p>
+                      <p class="mt-2 font-body-md text-body-md text-pure-white">
+                        Falta de planificación
+                      </p>
+                    </div>
+                    <div class="border-l border-error/50 bg-error-container/10 px-4 py-3">
+                      <p
+                        class="font-label-caps text-[10px] tracking-widest text-error"
+                      >
+                        07 / MARCA
+                      </p>
+                      <p class="mt-2 font-body-md text-body-md text-pure-white">
+                        Dificultad para diferenciarse
+                      </p>
+                    </div>
+                    <div class="border-l border-error/50 bg-error-container/10 px-4 py-3">
+                      <p
+                        class="font-label-caps text-[10px] tracking-widest text-error"
+                      >
+                        08 / INVERSIÓN
+                      </p>
+                      <p class="mt-2 font-body-md text-body-md text-pure-white">
+                        Presupuesto sin visión global
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex flex-col justify-between border border-primary-container/40 bg-primary-container/10 p-5"
+                  >
+                    <div>
+                      <p
+                        class="font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
+                      >
+                        LO QUE FALTA
+                      </p>
+                      <p class="mt-4 font-headline-md text-2xl text-pure-white">
+                        Dirección común
+                      </p>
+                    </div>
+                    <div class="mt-8 space-y-3">
+                      <span class="block h-px w-full bg-primary-container"></span>
+                      <span class="block h-px w-2/3 bg-primary-container/60"></span>
+                      <span class="block h-px w-1/3 bg-primary-container/30"></span>
+                    </div>
+                    <p
+                      class="mt-8 font-body-md text-sm leading-6 text-on-surface-variant"
+                    >
+                      Ordenar prioridades antes de multiplicar acciones.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3
-                class="font-body-lg text-body-lg text-pure-white font-medium mb-2"
-              >
-                Redes sociales sin estrategia
-              </h3>
-            </div>
-            <div
-              class="future-card bg-surface-container-low border border-white/5 rounded-xl p-6 glow-hover transition-all duration-300 flex flex-col group"
-            >
-              <div
-                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center mb-4 border border-white/5 group-hover:border-primary-container/30 transition-colors"
-              >
-                <span class="material-symbols-outlined text-primary-fixed-dim"
-                  >trending_down</span
-                >
-              </div>
-              <h3
-                class="font-body-lg text-body-lg text-pure-white font-medium mb-2"
-              >
-                Campañas que no convierten
-              </h3>
-            </div>
-            <div
-              class="future-card bg-surface-container-low border border-white/5 rounded-xl p-6 glow-hover transition-all duration-300 flex flex-col group"
-            >
-              <div
-                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center mb-4 border border-white/5 group-hover:border-primary-container/30 transition-colors"
-              >
-                <span class="material-symbols-outlined text-primary-fixed-dim"
-                  >group_off</span
-                >
-              </div>
-              <h3
-                class="font-body-lg text-body-lg text-pure-white font-medium mb-2"
-              >
-                Proveedores dispersos
-              </h3>
-            </div>
-            <div
-              class="future-card bg-surface-container-low border border-white/5 rounded-xl p-6 glow-hover transition-all duration-300 flex flex-col group"
-            >
-              <div
-                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center mb-4 border border-white/5 group-hover:border-primary-container/30 transition-colors"
-              >
-                <span class="material-symbols-outlined text-primary-fixed-dim"
-                  >chat_error</span
-                >
-              </div>
-              <h3
-                class="font-body-lg text-body-lg text-pure-white font-medium mb-2"
-              >
-                Falta de línea de comunicación
-              </h3>
-            </div>
-            <div
-              class="future-card bg-surface-container-low border border-white/5 rounded-xl p-6 glow-hover transition-all duration-300 flex flex-col group"
-            >
-              <div
-                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center mb-4 border border-white/5 group-hover:border-primary-container/30 transition-colors"
-              >
-                <span class="material-symbols-outlined text-primary-fixed-dim"
-                  >calendar_month</span
-                >
-              </div>
-              <h3
-                class="font-body-lg text-body-lg text-pure-white font-medium mb-2"
-              >
-                Ausencia de planificación
-              </h3>
-            </div>
-            <div
-              class="future-card bg-surface-container-low border border-white/5 rounded-xl p-6 glow-hover transition-all duration-300 flex flex-col group"
-            >
-              <div
-                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center mb-4 border border-white/5 group-hover:border-primary-container/30 transition-colors"
-              >
-                <span class="material-symbols-outlined text-primary-fixed-dim"
-                  >difference</span
-                >
-              </div>
-              <h3
-                class="font-body-lg text-body-lg text-pure-white font-medium mb-2"
-              >
-                Dificultad para diferenciarse
-              </h3>
-            </div>
-            <div
-              class="future-card bg-surface-container-low border border-white/5 rounded-xl p-6 glow-hover transition-all duration-300 flex flex-col group"
-            >
-              <div
-                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center mb-4 border border-white/5 group-hover:border-primary-container/30 transition-colors"
-              >
-                <span class="material-symbols-outlined text-primary-fixed-dim"
-                  >euro</span
-                >
-              </div>
-              <h3
-                class="font-body-lg text-body-lg text-pure-white font-medium mb-2"
-              >
-                Inversión sin visión global
-              </h3>
             </div>
           </div>
         </div>
@@ -858,9 +1070,24 @@
       <!-- END: ProblemSection -->
       <!-- BEGIN: SolutionSection -->
       <section
-        class="px-gutter py-20 lg:py-section-padding bg-pitch-black border-t border-white/5"
+        class="relative overflow-hidden px-gutter py-20 lg:py-section-padding bg-pitch-black border-t border-white/5"
       >
-        <div class="max-w-container-max mx-auto">
+        <img
+          alt=""
+          aria-hidden="true"
+          class="absolute inset-0 h-full w-full object-cover object-[30%_center] opacity-100 saturate-150"
+          src="assets/backgrounds/strategy-glow-background.png"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-pitch-black/35 via-pitch-black/10 to-pitch-black/60 pointer-events-none"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-pitch-black/45 via-transparent to-pitch-black/20 pointer-events-none"
+        ></div>
+        <div
+          class="absolute inset-0 bg-primary-container/15 mix-blend-screen pointer-events-none"
+        ></div>
+        <div class="relative z-10 max-w-container-max mx-auto">
           <div
             class="mb-16 grid grid-cols-1 items-center gap-12 lg:mb-20 lg:grid-cols-12 lg:gap-16"
           >
@@ -874,7 +1101,7 @@
                 class="font-headline-lg text-headline-lg text-pure-white mb-6"
               >
                 Convertimos tu marketing <br />en un
-                <span class="text-primary-container text-glow">sistema.</span>
+                <span class="solution-title-accent">sistema.</span>
               </h2>
               <p
                 class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-5"
@@ -902,33 +1129,56 @@
             </div>
 
             <div
-              class="future-panel relative mx-auto w-full max-w-[380px] overflow-hidden border border-white/10 p-2 lg:col-span-5 lg:mx-0 lg:justify-self-end"
+              class="video-holo-shell mx-auto w-full max-w-[390px] lg:col-span-5 lg:mx-0 lg:justify-self-end"
             >
-              <video
-                aria-label="Vídeo sobre la evolución de la estrategia de marketing"
-                autoplay
-                class="relative z-10 aspect-[9/16] w-full bg-black object-cover"
-                controls
-                loop
-                muted
-                playsinline
-                poster="assets/video/estrategia-marketing-poster.jpg"
-                preload="metadata"
-              >
-                <source
-                  src="assets/video/estrategia-marketing.mp4"
-                  type="video/mp4"
-                />
-                Tu navegador no puede reproducir este vídeo.
-              </video>
+              <div class="video-holo-frame">
+                <span class="video-holo-corner is-top-left"></span>
+                <span class="video-holo-corner is-top-right"></span>
+                <span class="video-holo-corner is-bottom-left"></span>
+                <span class="video-holo-corner is-bottom-right"></span>
+                <div class="video-holo-screen">
+                  <video
+                    aria-label="Vídeo sobre la evolución de la estrategia de marketing"
+                    autoplay
+                    class="relative z-10 aspect-[9/16] w-full bg-black object-cover"
+                    controls
+                    loop
+                    muted
+                    playsinline
+                    poster="assets/video/estrategia-marketing-poster.jpg"
+                    preload="metadata"
+                  >
+                    <source
+                      src="assets/video/estrategia-marketing.mp4"
+                      type="video/mp4"
+                    />
+                    Tu navegador no puede reproducir este vídeo.
+                  </video>
+                  <div
+                    class="video-holo-tag left-4 top-4 px-3 py-2 sm:left-5 sm:top-5"
+                  >
+                    <p
+                      class="font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
+                    >
+                      MARKETING // 15S
+                    </p>
+                  </div>
+                  <div
+                    class="video-holo-tag right-4 top-4 hidden px-3 py-2 sm:block"
+                  >
+                    <p
+                      class="font-label-caps text-[10px] tracking-widest text-outline"
+                    >
+                      LOOP ACTIVO
+                    </p>
+                  </div>
+                </div>
+              </div>
               <div
-                class="absolute left-5 top-5 z-20 border-l-2 border-primary-container bg-black/75 px-3 py-2 backdrop-blur-sm pointer-events-none"
+                class="mt-4 flex items-center justify-between font-label-caps text-[10px] tracking-widest text-outline"
               >
-                <p
-                  class="font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
-                >
-                  MARKETING // 15S
-                </p>
+                <span>HEADTEAM SIGNAL</span>
+                <span class="text-primary-fixed-dim">STRATEGY FEED</span>
               </div>
             </div>
           </div>
@@ -1311,13 +1561,24 @@
       <!-- END: MethodSection -->
       <!-- BEGIN: AuthoritySection -->
       <section
-        class="px-gutter py-20 lg:py-section-padding bg-surface-container-lowest border-t border-white/5"
+        class="relative overflow-hidden px-gutter py-20 lg:py-section-padding bg-surface-container-lowest border-t border-white/5"
       >
-        <div class="max-w-container-max mx-auto">
+        <div
+          class="absolute -left-52 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-primary-container opacity-10 blur-[140px] pointer-events-none"
+        ></div>
+        <div
+          class="absolute inset-0 bg-dot-grid bg-dot-grid-size opacity-20 pointer-events-none"
+        ></div>
+        <div class="relative z-10 max-w-container-max mx-auto">
           <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16"
+            class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center lg:gap-16"
           >
-            <div>
+            <div class="lg:col-span-5">
+              <p
+                class="mb-5 font-label-caps text-label-caps text-primary-container"
+              >
+                SISTEMA CONECTADO
+              </p>
               <h2
                 class="font-headline-lg text-headline-lg text-pure-white mb-6"
               >
@@ -1332,77 +1593,154 @@
                 sistema. No se trata de hacer más cosas, sino de hacer las
                 adecuadas con una dirección común.
               </p>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
               <div
-                class="future-card bg-surface-container-low p-6 rounded-xl border border-white/5 text-center"
+                class="mt-8 border-l border-primary-container/60 pl-5 font-label-caps text-[11px] leading-6 tracking-widest text-primary-fixed-dim"
               >
-                <h4 class="font-headline-md text-primary-container mb-2">
-                  Estrategia
-                </h4>
-                <p class="font-label-caps text-on-surface-variant">
-                  DIRECCIÓN Y PRIORIDADES
-                </p>
-              </div>
-              <div
-                class="future-card bg-surface-container-low p-6 rounded-xl border border-white/5 text-center"
-              >
-                <h4 class="font-headline-md text-primary-container mb-2">
-                  Ejecución
-                </h4>
-                <p class="font-label-caps text-on-surface-variant">
-                  ACCIONES CONECTADAS
-                </p>
+                ESTRATEGIA / EJECUCIÓN / MEDICIÓN
               </div>
             </div>
-          </div>
-          <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div
-              class="future-card bg-surface-container-low p-6 rounded-xl border border-white/5"
-            >
-              <p
-                class="font-label-caps text-label-caps text-primary-container mb-3"
+
+            <div class="lg:col-span-7">
+              <div
+                class="relative overflow-hidden border border-white/10 bg-black/35 p-6 backdrop-blur-sm sm:p-8 lg:p-10"
               >
-                MARCA Y COMUNICACIÓN
-              </p>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                Mensajes comerciales, tono de marca, storytelling, diseño y
-                creatividad.
-              </p>
-            </div>
-            <div
-              class="future-card bg-surface-container-low p-6 rounded-xl border border-white/5"
-            >
-              <p
-                class="font-label-caps text-label-caps text-primary-container mb-3"
-              >
-                CAPTACIÓN Y CRECIMIENTO
-              </p>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                SEO, campañas, landing pages, embudos y medición de resultados.
-              </p>
-            </div>
-            <div
-              class="future-card bg-surface-container-low p-6 rounded-xl border border-white/5"
-            >
-              <p
-                class="font-label-caps text-label-caps text-primary-container mb-3"
-              >
-                CONTENIDO Y PRESENCIA DIGITAL
-              </p>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                Redes sociales, newsletters, blog, reels y contenidos
-                corporativos.
-              </p>
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-primary-container/20 via-transparent to-transparent pointer-events-none"
+                ></div>
+                <div
+                  class="absolute left-8 right-8 top-1/2 hidden h-px bg-gradient-to-r from-transparent via-primary-container/70 to-transparent lg:block"
+                ></div>
+                <div
+                  class="absolute bottom-8 top-8 left-1/2 hidden w-px bg-gradient-to-b from-transparent via-primary-container/70 to-transparent lg:block"
+                ></div>
+
+                <div
+                  class="relative z-20 mb-8 border-b border-white/10 pb-6 lg:hidden"
+                >
+                  <p
+                    class="mb-2 font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
+                  >
+                    DIRECCIÓN CENTRAL
+                  </p>
+                  <h3 class="font-headline-md text-2xl text-pure-white">
+                    Una hoja de ruta que ordena todo lo demás.
+                  </h3>
+                </div>
+
+                <div
+                  class="pointer-events-none absolute left-1/2 top-1/2 z-30 hidden w-56 -translate-x-1/2 -translate-y-1/2 border border-primary-container/60 bg-pitch-black/90 px-6 py-5 text-center shadow-[0_0_50px_rgba(34,81,234,0.28)] lg:block"
+                >
+                  <p
+                    class="mb-3 font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
+                  >
+                    DIRECCIÓN CENTRAL
+                  </p>
+                  <h3 class="font-headline-md text-2xl text-pure-white">
+                    Marketing con criterio
+                  </h3>
+                </div>
+
+                <div
+                  class="relative z-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-x-24 lg:gap-y-24"
+                >
+                  <article class="border-t border-white/10 pt-5 lg:pr-8">
+                    <div class="mb-4 flex items-center gap-3">
+                      <span
+                        class="font-label-caps text-[10px] tracking-widest text-primary-container"
+                        >01</span
+                      >
+                      <span class="h-px flex-1 bg-white/10"></span>
+                    </div>
+                    <p
+                      class="mb-3 font-label-caps text-label-caps text-primary-fixed-dim"
+                    >
+                      ESTRATEGIA
+                    </p>
+                    <h3 class="mb-3 font-headline-md text-2xl text-pure-white">
+                      Prioridades claras
+                    </h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                      Objetivos, posicionamiento y decisiones para que el equipo
+                      sepa hacia dónde avanzar.
+                    </p>
+                  </article>
+
+                  <article class="border-t border-white/10 pt-5 lg:pl-8">
+                    <div class="mb-4 flex items-center gap-3">
+                      <span
+                        class="font-label-caps text-[10px] tracking-widest text-primary-container"
+                        >02</span
+                      >
+                      <span class="h-px flex-1 bg-white/10"></span>
+                    </div>
+                    <p
+                      class="mb-3 font-label-caps text-label-caps text-primary-fixed-dim"
+                    >
+                      MARCA
+                    </p>
+                    <h3 class="mb-3 font-headline-md text-2xl text-pure-white">
+                      Mensaje consistente
+                    </h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                      Tono, storytelling, diseño y creatividad trabajando con
+                      una misma intención.
+                    </p>
+                  </article>
+
+                  <article class="border-t border-white/10 pt-5 lg:pr-8">
+                    <div class="mb-4 flex items-center gap-3">
+                      <span
+                        class="font-label-caps text-[10px] tracking-widest text-primary-container"
+                        >03</span
+                      >
+                      <span class="h-px flex-1 bg-white/10"></span>
+                    </div>
+                    <p
+                      class="mb-3 font-label-caps text-label-caps text-primary-fixed-dim"
+                    >
+                      CAPTACIÓN
+                    </p>
+                    <h3 class="mb-3 font-headline-md text-2xl text-pure-white">
+                      Crecimiento medible
+                    </h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                      SEO, campañas, landings y embudos conectados con métricas
+                      de negocio.
+                    </p>
+                  </article>
+
+                  <article class="border-t border-white/10 pt-5 lg:pl-8">
+                    <div class="mb-4 flex items-center gap-3">
+                      <span
+                        class="font-label-caps text-[10px] tracking-widest text-primary-container"
+                        >04</span
+                      >
+                      <span class="h-px flex-1 bg-white/10"></span>
+                    </div>
+                    <p
+                      class="mb-3 font-label-caps text-label-caps text-primary-fixed-dim"
+                    >
+                      CONTENIDO
+                    </p>
+                    <h3 class="mb-3 font-headline-md text-2xl text-pure-white">
+                      Presencia con sentido
+                    </h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                      Redes, newsletters, blog y piezas creativas diseñadas para
+                      reforzar el sistema.
+                    </p>
+                  </article>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <!-- END: AuthoritySection -->
-      <!-- BEGIN: SuccessStoriesSection -->
+      <!-- BEGIN: FinalConversionSection -->
       <section
         class="relative overflow-hidden border-t border-white/5 bg-pitch-black px-gutter py-20 lg:py-section-padding"
-        id="casos"
+        id="contacto"
       >
         <div
           class="absolute inset-0 bg-dot-grid bg-dot-grid-size opacity-25 pointer-events-none"
@@ -1412,307 +1750,294 @@
         ></div>
         <div class="relative z-10 mx-auto max-w-container-max">
           <div
-            class="mb-12 flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between"
+            class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14"
           >
-            <div class="max-w-4xl">
-              <p
-                class="mb-5 font-label-caps text-label-caps text-primary-container"
-              >
-                CASOS DE ÉXITO // 01
-              </p>
-              <h2
-                class="mb-6 font-headline-xl-mobile text-headline-xl-mobile text-pure-white md:font-headline-xl md:text-headline-xl"
-              >
-                Resultados con
-                <span class="text-primary-container text-glow"
-                  >dirección.</span
+            <div class="lg:col-span-5" id="casos">
+              <div class="mb-10 border-b border-white/10 pb-10">
+                <p
+                  class="mb-5 font-label-caps text-label-caps text-primary-container"
                 >
+                  CASOS DE ÉXITO // RESUMEN
+                </p>
+                <h2
+                  class="mb-5 font-headline-lg text-headline-lg text-pure-white"
+                >
+                  Resultados con
+                  <span class="text-primary-container text-glow"
+                    >dirección.</span
+                  >
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Un ejemplo de cómo conectamos propuesta de valor, contenidos,
+                  campañas y medición para convertir el marketing en crecimiento
+                  más claro.
+                </p>
+                <div
+                  class="mt-7 grid grid-cols-3 border-l border-t border-white/10"
+                >
+                  <div class="border-b border-r border-white/10 p-4">
+                    <p class="font-headline-md text-2xl text-pure-white">
+                      <span class="text-primary-container">+</span>42%
+                    </p>
+                    <p
+                      class="mt-2 font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
+                    >
+                      CAPTACIÓN
+                    </p>
+                  </div>
+                  <div class="border-b border-r border-white/10 p-4">
+                    <p class="font-headline-md text-2xl text-pure-white">
+                      <span class="text-primary-container">-</span>31%
+                    </p>
+                    <p
+                      class="mt-2 font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
+                    >
+                      CPL
+                    </p>
+                  </div>
+                  <div class="border-b border-r border-white/10 p-4">
+                    <p class="font-headline-md text-2xl text-pure-white">
+                      2,4<span class="text-primary-container">X</span>
+                    </p>
+                    <p
+                      class="mt-2 font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
+                    >
+                      RETORNO
+                    </p>
+                  </div>
+                </div>
+                <p
+                  class="mt-4 font-label-caps text-[10px] tracking-widest text-outline"
+                >
+                  DATOS DE EJEMPLO
+                </p>
+              </div>
+              <div
+                class="future-kicker mb-6 inline-flex items-center gap-2 border border-primary-container/30 bg-primary-container/10 px-3 py-2 font-label-caps text-label-caps text-primary-fixed-dim"
+              >
+                <span class="h-2 w-2 rounded-full bg-primary-container"></span>
+                PRIMERA VALORACIÓN
+              </div>
+              <h2
+                class="mb-6 font-headline-lg text-headline-lg text-pure-white"
+              >
+                Pongamos dirección a tu
+                <span class="text-primary-container text-glow">marketing.</span>
               </h2>
               <p
-                class="max-w-2xl font-body-lg text-body-lg text-on-surface-variant"
+                class="mb-8 max-w-xl font-body-lg text-body-lg text-on-surface-variant"
               >
-                Estrategia, creatividad y ejecución conectadas para convertir
-                el marketing en crecimiento medible.
+                Cuéntanos dónde está tu empresa y qué quieres conseguir.
+                Revisaremos tu caso y te contactaremos para valorar el siguiente
+                paso con criterio.
               </p>
-            </div>
-            <div
-              class="flex items-center gap-5 border-b border-primary-container/50 pb-3 font-label-caps text-label-caps"
-              aria-label="Caso mostrado: uno de tres"
-            >
-              <span class="text-primary-container">01</span>
-              <span class="text-outline">/</span>
-              <span class="text-outline">02</span>
-              <span class="text-outline">/</span>
-              <span class="text-outline">03</span>
-            </div>
-          </div>
-
-          <div
-            class="grid grid-cols-1 gap-10 border-t border-white/10 pt-10 lg:grid-cols-12 lg:gap-12"
-          >
-            <div
-              class="future-panel h-[360px] overflow-hidden border border-white/10 p-2 sm:h-[480px] lg:col-span-7 lg:h-[560px]"
-            >
-              <img
-                alt="Equipo analizando el rendimiento de una estrategia de marketing"
-                class="relative z-10 h-full w-full object-cover object-center opacity-90"
-                src="assets/headteam-strategy-session.png"
-              />
-              <div
-                class="absolute inset-2 z-10 bg-gradient-to-t from-pitch-black/60 via-transparent to-transparent pointer-events-none"
-              ></div>
-              <div
-                class="absolute bottom-6 left-6 z-20 border-l-2 border-primary-container bg-black/70 px-4 py-3 backdrop-blur-sm"
-              >
-                <p
-                  class="font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
-                >
-                  SISTEMA ESTRATÉGICO EN ACCIÓN
-                </p>
-              </div>
-            </div>
-
-            <div class="lg:col-span-5">
-              <article class="border-t border-white/10 py-7 first:pt-0">
-                <p
-                  class="mb-4 font-label-caps text-label-caps text-primary-container"
-                >
-                  EL RETO
-                </p>
-                <p class="font-body-md text-body-md text-on-surface-variant">
-                  Generar demanda cualificada en un mercado competitivo, con
-                  ciclos de decisión largos y múltiples interlocutores.
-                </p>
-              </article>
-              <article class="border-t border-white/10 py-7">
-                <p
-                  class="mb-4 font-label-caps text-label-caps text-primary-container"
-                >
-                  LA ESTRATEGIA
-                </p>
-                <p class="font-body-md text-body-md text-on-surface-variant">
-                  Rediseñamos la propuesta de valor y conectamos contenido,
-                  campañas y automatización dentro de un mismo sistema.
-                </p>
-              </article>
-              <article class="border-y border-white/10 py-7">
-                <p
-                  class="mb-4 font-label-caps text-label-caps text-primary-container"
-                >
-                  EL RESULTADO
-                </p>
-                <p class="font-body-md text-body-md text-on-surface-variant">
-                  Una captación más eficiente, oportunidades de mayor calidad y
-                  una base estable para seguir creciendo.
-                </p>
-              </article>
-            </div>
-          </div>
-
-          <div
-            class="mt-10 grid grid-cols-1 border-l border-t border-white/10 sm:grid-cols-3"
-          >
-            <div class="border-b border-r border-white/10 p-6 sm:p-8">
-              <p
-                class="font-headline-lg text-4xl text-pure-white sm:text-headline-lg"
-              >
-                <span class="text-primary-container">+</span>42%
-              </p>
-              <p
-                class="mt-3 font-label-caps text-label-caps text-primary-fixed-dim"
-              >
-                CAPTACIÓN
-              </p>
-            </div>
-            <div class="border-b border-r border-white/10 p-6 sm:p-8">
-              <p
-                class="font-headline-lg text-4xl text-pure-white sm:text-headline-lg"
-              >
-                <span class="text-primary-container">-</span>31%
-              </p>
-              <p
-                class="mt-3 font-label-caps text-label-caps text-primary-fixed-dim"
-              >
-                COSTE POR LEAD
-              </p>
-            </div>
-            <div class="border-b border-r border-white/10 p-6 sm:p-8">
-              <p
-                class="font-headline-lg text-4xl text-pure-white sm:text-headline-lg"
-              >
-                2,4<span class="text-primary-container">X</span>
-              </p>
-              <p
-                class="mt-3 font-label-caps text-label-caps text-primary-fixed-dim"
-              >
-                RETORNO
-              </p>
-            </div>
-          </div>
-          <p
-            class="mt-4 font-label-caps text-[10px] tracking-widest text-outline"
-          >
-            DATOS DE EJEMPLO
-          </p>
-        </div>
-      </section>
-      <!-- END: SuccessStoriesSection -->
-      <!-- BEGIN: CTASection -->
-      <section
-        class="px-gutter py-20 lg:py-section-padding bg-pitch-black border-t border-white/5 relative overflow-hidden"
-      >
-        <div class="absolute inset-0 z-0 pointer-events-none opacity-20"></div>
-        <div
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-container rounded-full blur-[120px] opacity-20 pointer-events-none"
-        ></div>
-        <div class="max-w-container-max mx-auto text-center relative z-10">
-          <h2 class="font-headline-lg text-headline-lg text-pure-white mb-6">
-            ¿Quieres saber si HeadTeam encaja con tu empresa?
-          </h2>
-          <p
-            class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10"
-          >
-            Cuéntanos en qué punto está tu marketing y prepararemos una primera
-            valoración estratégica para ver cómo podemos ayudarte a ordenar,
-            profesionalizar y hacer crecer tu presencia digital.
-          </p>
-          <a
-            class="future-button bg-primary-container text-pure-white font-button text-button px-8 py-4 hover:bg-inverse-primary transition-all duration-300 shadow-lg shadow-primary-container/30 hover:shadow-primary-container/50 inline-flex items-center gap-2 group"
-            href="#contacto"
-          >
-            Solicitar diagnóstico estratégico
-            <span
-              class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
-              >arrow_forward</span
-            >
-          </a>
-        </div>
-      </section>
-      <!-- END: CTASection -->
-      <!-- BEGIN: ContactSection -->
-      <section
-        class="relative overflow-hidden border-t border-white/10 bg-surface-container-lowest px-gutter py-20 lg:py-section-padding"
-        id="contacto"
-      >
-        <div
-          class="absolute -right-64 top-0 h-[560px] w-[560px] rounded-full bg-primary-container opacity-15 blur-[140px] pointer-events-none"
-        ></div>
-        <div
-          class="absolute inset-0 bg-dot-grid bg-dot-grid-size opacity-30 pointer-events-none"
-        ></div>
-        <div
-          class="relative z-10 mx-auto grid max-w-container-max grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16"
-        >
-          <div class="lg:col-span-5 lg:pt-8">
-            <div
-              class="future-kicker mb-6 inline-flex items-center gap-2 border border-primary-container/30 bg-primary-container/10 px-3 py-2 font-label-caps text-label-caps text-primary-fixed-dim"
-            >
-              <span class="h-2 w-2 rounded-full bg-primary-container"></span>
-              PRIMERA VALORACIÓN
-            </div>
-            <h2 class="mb-6 font-headline-lg text-headline-lg text-pure-white">
-              Pongamos dirección a tu
-              <span class="text-primary-container text-glow">marketing.</span>
-            </h2>
-            <p class="mb-10 max-w-xl font-body-lg text-body-lg text-on-surface-variant">
-              Cuéntanos dónde está tu empresa y qué quieres conseguir.
-              Revisaremos tu caso y te contactaremos para valorar el siguiente
-              paso con criterio.
-            </p>
-            <div class="space-y-5 border-t border-white/10 pt-8">
-              <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined mt-0.5 text-primary-container">schedule</span>
-                <div>
-                  <p class="font-button text-button text-pure-white">Respuesta en 1–2 días laborables</p>
-                  <p class="mt-1 font-body-md text-sm text-on-surface-variant">Sin automatismos ni respuestas genéricas.</p>
+              <div class="grid grid-cols-1 gap-4 border-t border-white/10 pt-8">
+                <div class="flex items-start gap-4">
+                  <span
+                    class="material-symbols-outlined mt-0.5 text-primary-container"
+                    >schedule</span
+                  >
+                  <div>
+                    <p class="font-button text-button text-pure-white">
+                      Respuesta en 1–2 días laborables
+                    </p>
+                    <p class="mt-1 font-body-md text-sm text-on-surface-variant">
+                      Sin automatismos ni respuestas genéricas.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined mt-0.5 text-primary-container">lock</span>
-                <div>
-                  <p class="font-button text-button text-pure-white">Tus datos, tratados con confidencialidad</p>
-                  <p class="mt-1 font-body-md text-sm text-on-surface-variant">Solo los utilizaremos para valorar tu consulta.</p>
+                <div class="flex items-start gap-4">
+                  <span
+                    class="material-symbols-outlined mt-0.5 text-primary-container"
+                    >lock</span
+                  >
+                  <div>
+                    <p class="font-button text-button text-pure-white">
+                      Datos tratados con confidencialidad
+                    </p>
+                    <p class="mt-1 font-body-md text-sm text-on-surface-variant">
+                      Solo los utilizaremos para valorar tu consulta.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="future-panel border border-white/10 p-6 sm:p-8 lg:col-span-7 lg:p-10">
-            <form class="relative z-10" id="contact-form">
-              <div class="mb-8 flex items-center justify-between border-b border-white/10 pb-5">
-                <div>
-                  <p class="font-label-caps text-label-caps text-primary-fixed-dim">SOLICITUD // 01</p>
-                  <h3 class="mt-2 font-headline-md text-2xl text-pure-white sm:text-headline-md">Hablemos de tu proyecto</h3>
+            <div
+              class="future-panel border border-white/10 p-6 sm:p-8 lg:col-span-7 lg:p-10"
+            >
+              <form class="relative z-10" id="contact-form">
+                <div
+                  class="mb-8 flex items-center justify-between border-b border-white/10 pb-5"
+                >
+                  <div>
+                    <p
+                      class="font-label-caps text-label-caps text-primary-fixed-dim"
+                    >
+                      SOLICITUD // 01
+                    </p>
+                    <h3
+                      class="mt-2 font-headline-md text-2xl text-pure-white sm:text-headline-md"
+                    >
+                      Hablemos de tu proyecto
+                    </h3>
+                  </div>
+                  <span
+                    class="material-symbols-outlined hidden text-3xl text-primary-container sm:block"
+                    >north_east</span
+                  >
                 </div>
-                <span class="material-symbols-outlined hidden text-3xl text-primary-container sm:block">north_east</span>
-              </div>
 
-              <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <label class="block">
-                  <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">NOMBRE Y APELLIDOS *</span>
-                  <input class="contact-field px-4 py-3.5" name="nombre" placeholder="Tu nombre" required type="text" autocomplete="name" />
-                </label>
-                <label class="block">
-                  <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">EMAIL PROFESIONAL *</span>
-                  <input class="contact-field px-4 py-3.5" name="email" placeholder="nombre@empresa.com" required type="email" autocomplete="email" />
-                </label>
-                <label class="block">
-                  <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">EMPRESA *</span>
-                  <input class="contact-field px-4 py-3.5" name="empresa" placeholder="Nombre de la empresa" required type="text" autocomplete="organization" />
-                </label>
-                <label class="block">
-                  <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">TELÉFONO</span>
-                  <input class="contact-field px-4 py-3.5" name="telefono" placeholder="+34 600 000 000" type="tel" autocomplete="tel" />
-                </label>
-                <label class="block">
-                  <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">¿QUÉ NECESITAS? *</span>
-                  <select class="contact-field px-4 py-3.5" name="necesidad" required>
-                    <option value="" disabled selected>Selecciona una opción</option>
-                    <option>Estrategia de marketing</option>
-                    <option>Departamento de marketing externo</option>
-                    <option>Marca y comunicación</option>
-                    <option>Captación y crecimiento</option>
-                    <option>Otro proyecto</option>
-                  </select>
-                </label>
-                <label class="block">
-                  <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">INVERSIÓN MENSUAL PREVISTA *</span>
-                  <select class="contact-field px-4 py-3.5" name="inversion" required>
-                    <option value="" disabled selected>Selecciona un rango</option>
-                    <option>3.000 € – 5.000 €</option>
-                    <option>5.000 € – 10.000 €</option>
-                    <option>Más de 10.000 €</option>
-                    <option>Proyecto puntual de alto valor</option>
-                  </select>
-                </label>
-              </div>
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <label class="block">
+                    <span
+                      class="mb-2 block font-label-caps text-label-caps text-on-surface-variant"
+                      >NOMBRE Y APELLIDOS *</span
+                    >
+                    <input
+                      class="contact-field px-4 py-3.5"
+                      name="nombre"
+                      placeholder="Tu nombre"
+                      required
+                      type="text"
+                      autocomplete="name"
+                    />
+                  </label>
+                  <label class="block">
+                    <span
+                      class="mb-2 block font-label-caps text-label-caps text-on-surface-variant"
+                      >EMAIL PROFESIONAL *</span
+                    >
+                    <input
+                      class="contact-field px-4 py-3.5"
+                      name="email"
+                      placeholder="nombre@empresa.com"
+                      required
+                      type="email"
+                      autocomplete="email"
+                    />
+                  </label>
+                  <label class="block">
+                    <span
+                      class="mb-2 block font-label-caps text-label-caps text-on-surface-variant"
+                      >EMPRESA *</span
+                    >
+                    <input
+                      class="contact-field px-4 py-3.5"
+                      name="empresa"
+                      placeholder="Nombre de la empresa"
+                      required
+                      type="text"
+                      autocomplete="organization"
+                    />
+                  </label>
+                  <label class="block">
+                    <span
+                      class="mb-2 block font-label-caps text-label-caps text-on-surface-variant"
+                      >TELÉFONO</span
+                    >
+                    <input
+                      class="contact-field px-4 py-3.5"
+                      name="telefono"
+                      placeholder="+34 600 000 000"
+                      type="tel"
+                      autocomplete="tel"
+                    />
+                  </label>
+                  <label class="block">
+                    <span
+                      class="mb-2 block font-label-caps text-label-caps text-on-surface-variant"
+                      >¿QUÉ NECESITAS? *</span
+                    >
+                    <select class="contact-field px-4 py-3.5" name="necesidad" required>
+                      <option value="" disabled selected>Selecciona una opción</option>
+                      <option>Estrategia de marketing</option>
+                      <option>Departamento de marketing externo</option>
+                      <option>Marca y comunicación</option>
+                      <option>Captación y crecimiento</option>
+                      <option>Otro proyecto</option>
+                    </select>
+                  </label>
+                  <label class="block">
+                    <span
+                      class="mb-2 block font-label-caps text-label-caps text-on-surface-variant"
+                      >INVERSIÓN MENSUAL PREVISTA *</span
+                    >
+                    <select class="contact-field px-4 py-3.5" name="inversion" required>
+                      <option value="" disabled selected>Selecciona un rango</option>
+                      <option>3.000 € – 5.000 €</option>
+                      <option>5.000 € – 10.000 €</option>
+                      <option>Más de 10.000 €</option>
+                      <option>Proyecto puntual de alto valor</option>
+                    </select>
+                  </label>
+                </div>
 
-              <label class="mt-6 block">
-                <span class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">CUÉNTANOS EL RETO *</span>
-                <textarea class="contact-field min-h-[132px] resize-y px-4 py-3.5" name="mensaje" placeholder="Situación actual, objetivos y cualquier contexto que debamos conocer..." required></textarea>
-              </label>
+                <label class="mt-6 block">
+                  <span
+                    class="mb-2 block font-label-caps text-label-caps text-on-surface-variant"
+                    >CUÉNTANOS EL RETO *</span
+                  >
+                  <textarea
+                    class="contact-field min-h-[132px] resize-y px-4 py-3.5"
+                    name="mensaje"
+                    placeholder="Situación actual, objetivos y cualquier contexto que debamos conocer..."
+                    required
+                  ></textarea>
+                </label>
 
-              <label class="mt-6 flex cursor-pointer items-start gap-3 text-on-surface-variant">
-                <input class="mt-1 h-4 w-4 border-white/20 bg-black text-primary-container focus:ring-primary-container focus:ring-offset-0" name="privacidad" required type="checkbox" value="aceptada" />
-                <span class="font-body-md text-sm leading-6">He leído y acepto la política de privacidad y el tratamiento de mis datos para responder a esta solicitud. *</span>
-              </label>
+                <label
+                  class="mt-6 flex cursor-pointer items-start gap-3 text-on-surface-variant"
+                >
+                  <input
+                    class="mt-1 h-4 w-4 border-white/20 bg-black text-primary-container focus:ring-primary-container focus:ring-offset-0"
+                    name="privacidad"
+                    required
+                    type="checkbox"
+                    value="aceptada"
+                  />
+                  <span class="font-body-md text-sm leading-6"
+                    >He leído y acepto la política de privacidad y el
+                    tratamiento de mis datos para responder a esta solicitud.
+                    *</span
+                  >
+                </label>
 
-              <div class="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
-                <p class="font-label-caps text-[11px] leading-5 text-on-surface-variant">* CAMPOS OBLIGATORIOS</p>
-                <button class="future-button inline-flex items-center justify-center gap-2 bg-primary-container px-8 py-4 font-button text-button text-pure-white transition-all duration-300 hover:bg-inverse-primary" type="submit">
-                  Enviar solicitud
-                  <span class="material-symbols-outlined">arrow_forward</span>
-                </button>
-              </div>
-              <div class="mt-6 hidden border border-primary-container/30 bg-primary-container/10 p-4 text-primary-fixed" id="form-success" role="status">
-                <p class="font-button text-button">Solicitud preparada correctamente.</p>
-                <p class="mt-1 font-body-md text-sm text-on-surface-variant">Gracias. En la versión final, este formulario se conectará con vuestro canal de contacto.</p>
-              </div>
-            </form>
+                <div
+                  class="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <p
+                    class="font-label-caps text-[11px] leading-5 text-on-surface-variant"
+                  >
+                    * CAMPOS OBLIGATORIOS
+                  </p>
+                  <button
+                    class="future-button inline-flex items-center justify-center gap-2 bg-primary-container px-8 py-4 font-button text-button text-pure-white transition-all duration-300 hover:bg-inverse-primary"
+                    type="submit"
+                  >
+                    Enviar solicitud
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </button>
+                </div>
+                <div
+                  class="mt-6 hidden border border-primary-container/30 bg-primary-container/10 p-4 text-primary-fixed"
+                  id="form-success"
+                  role="status"
+                >
+                  <p class="font-button text-button">
+                    Solicitud preparada correctamente.
+                  </p>
+                  <p class="mt-1 font-body-md text-sm text-on-surface-variant">
+                    Gracias. En la versión final, este formulario se conectará
+                    con vuestro canal de contacto.
+                  </p>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>
-      <!-- END: ContactSection -->
+      <!-- END: FinalConversionSection -->
     </main>
     <!-- BEGIN: MainFooter -->
     <footer
