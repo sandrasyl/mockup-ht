@@ -905,6 +905,7 @@
         }
       }
       .future-marquee {
+        --logo-slot: clamp(190px, 12vw, 260px);
         white-space: nowrap;
         overflow: hidden;
         border-block: 1px solid rgba(255, 255, 255, 0.08);
@@ -922,24 +923,33 @@
         align-items: center;
         justify-content: flex-start;
         flex-shrink: 0;
+        gap: 12px;
+        padding-right: 12px;
       }
       .client-logo-placeholder {
         display: flex;
-        flex: 0 0 clamp(150px, 10vw, 200px);
+        box-sizing: border-box;
+        flex: 0 0 var(--logo-slot);
+        width: var(--logo-slot);
+        min-width: var(--logo-slot);
+        max-width: var(--logo-slot);
         height: 68px;
         align-items: center;
         justify-content: center;
         padding-inline: clamp(18px, 1.8vw, 28px);
         border-right: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
         transition: background 180ms ease;
       }
       .client-logo-placeholder:hover {
         background: rgba(34, 81, 234, 0.08);
       }
       .client-logo-placeholder img {
+        display: block;
+        flex: 0 0 auto;
         width: auto;
         height: auto;
-        max-width: clamp(96px, 7vw, 138px);
+        max-width: 156px;
         max-height: 40px;
         object-fit: contain;
         opacity: 0.62;
