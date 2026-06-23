@@ -149,8 +149,12 @@
       .solution-title-accent {
         color: #4f7dff;
         text-shadow:
-          0 2px 10px rgba(0, 0, 0, 0.82),
-          0 0 28px rgba(34, 81, 234, 0.72);
+          0 1px 4px rgba(0, 0, 0, 0.34),
+          0 0 12px rgba(34, 81, 234, 0.34);
+      }
+      .copy-emphasis {
+        color: #ffffff;
+        font-weight: 700;
       }
       body {
         background:
@@ -538,6 +542,137 @@
           0 0 0 1px rgba(34, 81, 234, 0.42) inset,
           0 24px 70px rgba(34, 81, 234, 0.12);
       }
+      .method-side-panel {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background:
+          linear-gradient(
+            135deg,
+            rgba(34, 81, 234, 0.18),
+            rgba(0, 0, 0, 0.18) 52%,
+            rgba(255, 255, 255, 0.04)
+          ),
+          rgba(0, 0, 0, 0.34);
+      }
+      .method-side-panel::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(34, 81, 234, 0.3),
+            transparent 42%
+          ),
+          repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.04) 0 1px,
+            transparent 1px 56px
+          );
+        opacity: 0.42;
+      }
+      .method-signal {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+      .method-signal::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        top: 11px;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          rgba(34, 81, 234, 0.85),
+          rgba(184, 196, 255, 0.16)
+        );
+      }
+      .method-signal span {
+        position: relative;
+        z-index: 1;
+        width: 11px;
+        height: 11px;
+        border: 1px solid rgba(184, 196, 255, 0.6);
+        background: #050505;
+        box-shadow: 0 0 16px rgba(34, 81, 234, 0.45);
+      }
+      .method-step-grid {
+        display: grid;
+        gap: 18px;
+      }
+      .method-step-card {
+        position: relative;
+        min-height: 230px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        background:
+          linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.07),
+            rgba(255, 255, 255, 0.015)
+          ),
+          rgba(5, 5, 5, 0.72);
+        padding: 24px;
+        transition:
+          border-color 200ms ease,
+          transform 200ms ease,
+          box-shadow 200ms ease;
+      }
+      .method-step-card::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 2px;
+        width: 54px;
+        background: #2251ea;
+        box-shadow: 0 0 22px rgba(34, 81, 234, 0.78);
+      }
+      .method-step-card::after {
+        content: '';
+        position: absolute;
+        inset: auto -20% -40% 20%;
+        height: 140px;
+        pointer-events: none;
+        background: radial-gradient(
+          circle,
+          rgba(34, 81, 234, 0.12),
+          transparent 68%
+        );
+      }
+      .method-step-card:hover {
+        border-color: rgba(34, 81, 234, 0.44);
+        box-shadow: 0 28px 80px rgba(34, 81, 234, 0.1);
+        transform: translateY(-2px);
+      }
+      .method-step-number {
+        display: inline-flex;
+        height: 42px;
+        min-width: 42px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(184, 196, 255, 0.22);
+        background: rgba(0, 0, 0, 0.46);
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        color: #b8c4ff;
+      }
+      @media (min-width: 1024px) {
+        .method-step-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .method-step-card.is-wide {
+          grid-column: 1 / -1;
+          min-height: 210px;
+        }
+      }
       .future-kicker {
         border-radius: 0;
         clip-path: polygon(
@@ -571,6 +706,177 @@
       .future-hero-title {
         letter-spacing: -0.03em;
       }
+      .hero-visual {
+        position: relative;
+        min-height: 640px;
+        isolation: isolate;
+      }
+      .hero-visual::before {
+        content: '';
+        position: absolute;
+        inset: 0 -22% -14% 0;
+        z-index: -2;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            circle at 64% 34%,
+            rgba(34, 81, 234, 0.34),
+            transparent 42%
+          ),
+          linear-gradient(
+            135deg,
+            rgba(34, 81, 234, 0.2),
+            transparent 62%
+          );
+        filter: blur(12px);
+      }
+      .hero-visual-photo {
+        position: absolute;
+        inset: -18% -32% -18% -16%;
+        overflow: hidden;
+        -webkit-mask-image: radial-gradient(
+          ellipse at 63% 47%,
+          #000 0,
+          #000 58%,
+          rgba(0, 0, 0, 0.78) 72%,
+          transparent 94%
+        );
+        mask-image: radial-gradient(
+          ellipse at 63% 47%,
+          #000 0,
+          #000 58%,
+          rgba(0, 0, 0, 0.78) 72%,
+          transparent 94%
+        );
+      }
+      .hero-visual-photo::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            circle at 56% 40%,
+            rgba(34, 81, 234, 0.08),
+            transparent 38%
+          ),
+          linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.72),
+            rgba(0, 0, 0, 0.02) 48%,
+            rgba(0, 0, 0, 0.2)
+          ),
+          linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.48)
+          );
+      }
+      .hero-visual-photo img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 58% center;
+        filter: saturate(1.04) contrast(1.08) brightness(1.16);
+        opacity: 1;
+        transform: scale(1.08);
+      }
+      .hero-visual-frame {
+        position: absolute;
+        inset: 11% -8% 9% -2%;
+        z-index: 2;
+        pointer-events: none;
+        background:
+          linear-gradient(
+              90deg,
+              transparent,
+              rgba(34, 81, 234, 0.65),
+              transparent
+            )
+            0 16% / 82% 1px no-repeat,
+          linear-gradient(
+              90deg,
+              transparent,
+              rgba(184, 196, 255, 0.28),
+              transparent
+            )
+            18% 86% / 74% 1px no-repeat;
+        opacity: 0.9;
+      }
+      .hero-visual-frame::before,
+      .hero-visual-frame::after {
+        content: '';
+        position: absolute;
+        height: 7px;
+        width: 7px;
+        border: 1px solid rgba(184, 196, 255, 0.65);
+        background: rgba(34, 81, 234, 0.18);
+        box-shadow: 0 0 22px rgba(34, 81, 234, 0.75);
+      }
+      .hero-visual-frame::before {
+        left: 7%;
+        top: calc(16% - 3px);
+      }
+      .hero-visual-frame::after {
+        bottom: calc(14% - 3px);
+        right: 8%;
+      }
+      @media (max-width: 1023px) {
+        .hero-visual {
+          min-height: clamp(320px, 56vw, 440px);
+          margin-top: 12px;
+          overflow: hidden;
+        }
+        .hero-visual::before {
+          inset: 12% -12% -10% -12%;
+          filter: blur(18px);
+          opacity: 0.72;
+        }
+        .hero-visual-photo {
+          inset: 0;
+          -webkit-mask-image: linear-gradient(
+            180deg,
+            transparent 0,
+            #000 10%,
+            #000 82%,
+            transparent 100%
+          );
+          mask-image: linear-gradient(
+            180deg,
+            transparent 0,
+            #000 10%,
+            #000 82%,
+            transparent 100%
+          );
+        }
+        .hero-visual-photo::after {
+          background:
+            linear-gradient(
+              90deg,
+              rgba(0, 0, 0, 0.38),
+              rgba(0, 0, 0, 0.04) 54%,
+              rgba(0, 0, 0, 0.28)
+            ),
+            linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0.04),
+              rgba(0, 0, 0, 0.58)
+            );
+        }
+        .hero-visual-photo img {
+          object-position: 56% center;
+          filter: saturate(1.02) contrast(1.05) brightness(1.05);
+          transform: scale(1);
+        }
+        .hero-visual-frame {
+          display: none;
+        }
+      }
+      @media (max-width: 767px) {
+        .hero-visual {
+          min-height: 340px;
+        }
+      }
       .future-marquee {
         white-space: nowrap;
         overflow: hidden;
@@ -585,18 +891,18 @@
       }
       .future-marquee-copy {
         display: flex;
-        width: max(100vw, 1540px);
+        width: max-content;
         align-items: center;
-        justify-content: space-around;
+        justify-content: flex-start;
         flex-shrink: 0;
       }
       .client-logo-placeholder {
         display: flex;
-        min-width: 220px;
-        height: 72px;
+        flex: 0 0 clamp(150px, 10vw, 200px);
+        height: 68px;
         align-items: center;
         justify-content: center;
-        padding-inline: 32px;
+        padding-inline: clamp(18px, 1.8vw, 28px);
         border-right: 1px solid rgba(255, 255, 255, 0.08);
         transition: background 180ms ease;
       }
@@ -606,8 +912,8 @@
       .client-logo-placeholder img {
         width: auto;
         height: auto;
-        max-width: 150px;
-        max-height: 44px;
+        max-width: clamp(96px, 7vw, 138px);
+        max-height: 40px;
         object-fit: contain;
         opacity: 0.62;
         transition:
@@ -654,7 +960,7 @@
           transform: translateX(0);
         }
         to {
-          transform: translateX(-50%);
+          transform: translateX(-25%);
         }
       }
       @media (max-width: 767px) {
@@ -754,10 +1060,10 @@
             <p
               class="font-body-lg text-body-lg text-on-surface-variant max-w-xl"
             >
-              Somos el departamento de marketing externo que une estrategia,
-              creatividad y ejecución para que tu marca deje de hacer acciones
+              Somos el departamento de marketing externo que une <strong class="copy-emphasis">estrategia,
+              creatividad y ejecución</strong> para que tu marca deje de hacer acciones
               sueltas y empiece a
-              <strong class="text-pure-white font-medium"
+              <strong class="copy-emphasis"
                 >funcionar como un sistema.</strong
               >
             </p>
@@ -815,41 +1121,17 @@
             </div>
           </div>
 
-          <div
-            class="future-panel relative h-[360px] w-full overflow-hidden border border-white/10 bg-surface-container-low/50 p-3 backdrop-blur-sm lg:h-[600px] lg:p-4"
-          >
-            <img
-              alt="Equipo de HeadTeam revisando un panel de rendimiento de marketing"
-              class="h-full w-full object-cover object-center opacity-90"
-              src="assets/headteam-strategy-session.png"
-            />
+          <div class="hero-visual w-full">
+            <div class="hero-visual-photo">
+              <img
+                alt="Equipo de HeadTeam revisando un panel de rendimiento de marketing"
+                src="assets/headteam-strategy-session.png"
+              />
+            </div>
+            <div class="hero-visual-frame"></div>
             <div
-              class="absolute inset-3 bg-gradient-to-t from-pitch-black/70 via-transparent to-transparent pointer-events-none lg:inset-4"
+              class="absolute -left-8 top-1/2 z-10 hidden h-px w-40 bg-gradient-to-r from-primary-container to-transparent lg:block"
             ></div>
-            <div
-              class="future-button-secondary absolute left-6 top-6 flex items-center gap-4 border border-white/10 bg-black/70 p-4 backdrop-blur-md lg:left-8 lg:top-8"
-            >
-              <span
-                class="material-symbols-outlined text-primary-container"
-                style="font-variation-settings: 'FILL' 1"
-                >analytics</span
-              >
-              <div>
-                <p
-                  class="font-label-caps text-label-caps text-on-surface-variant"
-                >
-                  RENDIMIENTO
-                </p>
-                <p class="font-body-md text-body-md font-medium text-pure-white">
-                  Sistema estratégico activo
-                </p>
-              </div>
-            </div>
-            <div
-              class="future-button absolute bottom-6 right-6 bg-primary-container px-4 py-3 font-label-caps text-label-caps text-pure-white lg:bottom-8 lg:right-8"
-            >
-              MARKETING CON DIRECCIÓN
-            </div>
           </div>
         </div>
       </section>
@@ -863,6 +1145,24 @@
           Vianoleo, Revio y Cponet.</span
         >
         <div class="future-marquee-track" aria-hidden="true">
+          <span class="future-marquee-copy">
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/jakala.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/mountain.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/lyra.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/vivadogs.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/vianoleo.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/revio.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/cponet.png" /></span>
+          </span>
+          <span class="future-marquee-copy">
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/jakala.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/mountain.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/lyra.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/vivadogs.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/vianoleo.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/revio.png" /></span>
+            <span class="client-logo-placeholder"><img alt="" src="assets/logos/cponet.png" /></span>
+          </span>
           <span class="future-marquee-copy">
             <span class="client-logo-placeholder"><img alt="" src="assets/logos/jakala.png" /></span>
             <span class="client-logo-placeholder"><img alt="" src="assets/logos/mountain.png" /></span>
@@ -910,15 +1210,15 @@
               </h2>
               <p class="font-body-md text-body-md text-on-surface-variant mb-4">
                 Muchas empresas invierten en marketing, pero no siempre lo hacen
-                con una estrategia común. Publican en redes sociales, lanzan
+                con una <strong class="copy-emphasis">estrategia común</strong>. Publican en redes sociales, lanzan
                 campañas, actualizan la web, crean contenidos o prueban acciones
-                puntuales sin que todo responda a una misma dirección.
+                puntuales sin que todo responda a una <strong class="copy-emphasis">misma dirección</strong>.
               </p>
               <p class="font-body-md text-body-md text-on-surface-variant">
                 Cuando cada acción va por su cuenta, el resultado suele ser el
                 mismo: esfuerzo disperso, mensajes poco consistentes y
                 oportunidades comerciales que se pierden. En HeadTeam ayudamos a
-                dejar atrás el marketing improvisado para trabajar con una visión
+                dejar atrás el <strong class="copy-emphasis">marketing improvisado</strong> para trabajar con una visión
                 más profesional, medible y orientada al crecimiento.
               </p>
             </div>
@@ -929,9 +1229,6 @@
               >
                 <div
                   class="absolute inset-0 bg-gradient-to-br from-error-container/20 via-transparent to-primary-container/10 pointer-events-none"
-                ></div>
-                <div
-                  class="absolute left-8 right-8 top-1/2 hidden h-px bg-gradient-to-r from-error/50 via-outline/25 to-primary-container/60 lg:block"
                 ></div>
                 <div
                   class="relative z-10 mb-8 flex flex-col gap-4 border-b border-white/10 pb-6 sm:flex-row sm:items-end sm:justify-between"
@@ -953,7 +1250,7 @@
                   </p>
                 </div>
 
-                <div class="relative z-10 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_180px] lg:items-stretch">
+                <div class="relative z-10 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_230px] lg:items-stretch">
                   <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
                     <div class="border-l border-error/50 bg-error-container/10 px-4 py-3">
                       <p
@@ -1038,28 +1335,67 @@
                   </div>
 
                   <div
-                    class="flex flex-col justify-between border border-primary-container/40 bg-primary-container/10 p-5"
+                    class="relative overflow-hidden border border-primary-container/50 bg-primary-container/10 p-5"
                   >
-                    <div>
+                    <div
+                      class="absolute inset-0 bg-dot-grid bg-dot-grid-size opacity-20 pointer-events-none"
+                    ></div>
+                    <div
+                      class="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary-container/30 blur-[70px] pointer-events-none"
+                    ></div>
+                    <div class="relative z-10 flex h-full flex-col">
                       <p
                         class="font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
                       >
                         LO QUE FALTA
                       </p>
-                      <p class="mt-4 font-headline-md text-2xl text-pure-white">
+                      <p class="mt-4 font-headline-md text-2xl leading-tight text-pure-white">
                         Dirección común
                       </p>
+                      <div class="my-8 flex flex-1 flex-col justify-center gap-4">
+                        <div
+                          class="border-l border-primary-container/70 bg-black/25 px-4 py-3"
+                        >
+                          <p
+                            class="font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
+                          >
+                            01 / PRIORIDAD
+                          </p>
+                          <p class="mt-1 font-body-md text-sm text-pure-white">
+                            Qué mover primero
+                          </p>
+                        </div>
+                        <div
+                          class="border-l border-primary-container/45 bg-black/20 px-4 py-3"
+                        >
+                          <p
+                            class="font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
+                          >
+                            02 / CANALES
+                          </p>
+                          <p class="mt-1 font-body-md text-sm text-pure-white">
+                            Dónde actuar
+                          </p>
+                        </div>
+                        <div
+                          class="border-l border-primary-container/25 bg-black/15 px-4 py-3"
+                        >
+                          <p
+                            class="font-label-caps text-[10px] tracking-widest text-primary-fixed-dim"
+                          >
+                            03 / MEDICIÓN
+                          </p>
+                          <p class="mt-1 font-body-md text-sm text-pure-white">
+                            Cómo mejorar
+                          </p>
+                        </div>
+                      </div>
+                      <p
+                        class="border-t border-primary-container/30 pt-5 font-body-md text-sm leading-6 text-on-surface-variant"
+                      >
+                        Ordenar prioridades antes de multiplicar acciones.
+                      </p>
                     </div>
-                    <div class="mt-8 space-y-3">
-                      <span class="block h-px w-full bg-primary-container"></span>
-                      <span class="block h-px w-2/3 bg-primary-container/60"></span>
-                      <span class="block h-px w-1/3 bg-primary-container/30"></span>
-                    </div>
-                    <p
-                      class="mt-8 font-body-md text-sm leading-6 text-on-surface-variant"
-                    >
-                      Ordenar prioridades antes de multiplicar acciones.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -1107,17 +1443,17 @@
                 class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-5"
               >
                 No somos una agencia que solo ejecuta tareas. Trabajamos como
-                una extensión de tu empresa para analizar dónde estás, qué
+                una <strong class="copy-emphasis">extensión de tu empresa</strong> para analizar dónde estás, qué
                 necesita tu marca, qué canales tienen más sentido y cómo ordenar
                 la comunicación, la captación, el posicionamiento y las ventas.
               </p>
               <p
                 class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl"
               >
-                Integramos estrategia de marketing, branding, contenidos,
+                Integramos <strong class="copy-emphasis">estrategia de marketing</strong>, branding, contenidos,
                 social media, SEO, campañas de publicidad, diseño, creatividad y
                 medición. Porque una marca fuerte no se construye con acciones
-                aisladas, sino con dirección, coherencia y ejecución constante.
+                aisladas, sino con <strong class="copy-emphasis">dirección, coherencia y ejecución constante</strong>.
               </p>
               <div class="mt-10 flex items-center gap-3">
                 <span class="h-px w-12 bg-primary-container"></span>
@@ -1277,9 +1613,9 @@
             class="font-body-lg text-body-lg text-on-primary-container/90 max-w-3xl mx-auto mb-12"
           >
             HeadTeam es para negocios que necesitan algo más que publicar
-            contenido: empresas que quieren profesionalizar su marketing,
+            contenido: empresas que quieren <strong class="copy-emphasis">profesionalizar su marketing</strong>,
             mejorar su posicionamiento, captar clientes, diferenciarse de su
-            competencia y construir una presencia digital con más intención.
+            competencia y construir una <strong class="copy-emphasis">presencia digital con más intención</strong>.
           </p>
           <div
             class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left mb-8"
@@ -1323,7 +1659,7 @@
           >
             Si buscas una solución puntual o únicamente gestionar una red
             social, probablemente no seamos la opción adecuada. Si buscas un
-            equipo que piense, planifique, ejecute y mida contigo, podemos
+            equipo que <strong class="copy-emphasis">piense, planifique, ejecute y mida</strong> contigo, podemos
             ayudarte.
           </p>
           <a
@@ -1349,12 +1685,12 @@
           <p class="font-body-lg text-body-lg text-on-surface-variant mb-4">
             Para garantizar un trabajo estratégico, constante y bien ejecutado,
             nuestros proyectos están orientados a empresas que buscan una
-            colaboración mensual estable o proyectos de alto valor.
+            <strong class="copy-emphasis">colaboración mensual estable</strong> o proyectos de alto valor.
           </p>
           <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
             Trabajamos con compañías que entienden el marketing como una
-            inversión y no como una tarea pendiente. Así podemos pensar,
-            ejecutar, medir y mejorar con continuidad.
+            <strong class="copy-emphasis">inversión</strong> y no como una tarea pendiente. Así podemos pensar,
+            ejecutar, medir y <strong class="copy-emphasis">mejorar con continuidad</strong>.
           </p>
           <div
             class="future-button-secondary inline-block bg-surface-container-low border border-white/10 px-6 py-3"
@@ -1399,7 +1735,7 @@
                 class="max-w-md font-body-lg text-body-lg text-on-surface-variant"
               >
                 Ordenamos el marketing desde el diagnóstico hasta la mejora
-                continua, con una hoja de ruta clara y acciones mensuales
+                continua, con una <strong class="copy-emphasis">hoja de ruta clara</strong> y acciones mensuales
                 conectadas entre sí.
               </p>
               <div class="mt-10 hidden items-center gap-3 lg:flex">
@@ -1409,152 +1745,172 @@
                   >DE PRINCIPIO A RESULTADO</span
                 >
               </div>
+              <div class="method-side-panel mt-8 hidden p-6 lg:block">
+                <div class="relative z-10">
+                  <p
+                    class="mb-5 font-label-caps text-label-caps text-primary-fixed-dim"
+                  >
+                    RUTA DE TRABAJO
+                  </p>
+                  <div class="method-signal mb-6" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <p
+                        class="font-label-caps text-[10px] tracking-widest text-on-surface-variant"
+                      >
+                        ENTRADA
+                      </p>
+                      <p class="mt-1 font-body-md text-body-md text-pure-white">
+                        Diagnóstico claro
+                      </p>
+                    </div>
+                    <div>
+                      <p
+                        class="font-label-caps text-[10px] tracking-widest text-on-surface-variant"
+                      >
+                        SALIDA
+                      </p>
+                      <p class="mt-1 font-body-md text-body-md text-pure-white">
+                        Acciones conectadas
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-6 border-t border-white/10 pt-5 font-label-caps text-[10px] leading-6 tracking-widest text-primary-fixed-dim"
+                  >
+                    OBSERVAR / DEFINIR / ORDENAR / ACTIVAR / MEJORAR
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="relative lg:col-span-7">
-            <div
-              class="absolute bottom-10 left-[23px] top-10 w-px bg-gradient-to-b from-primary-container via-primary-container/50 to-white/10 sm:left-[31px]"
-            ></div>
-            <article
-              class="group relative grid grid-cols-[48px_1fr] gap-5 border-t border-white/10 py-8 sm:grid-cols-[64px_1fr] sm:gap-8 sm:py-10"
-            >
-              <div
-                class="relative z-10 flex h-12 w-12 items-center justify-center border border-primary-container bg-pitch-black font-label-caps text-label-caps text-primary-fixed sm:h-16 sm:w-16"
-              >
-                01
-              </div>
-              <div class="pt-1 sm:pt-2">
-                <p
-                  class="mb-3 font-label-caps text-label-caps text-primary-container"
-                >
-                  OBSERVAR
-                </p>
-                <h3
-                  class="mb-3 font-headline-md text-2xl text-pure-white sm:text-headline-md"
-                >
-                  Diagnóstico
-                </h3>
-                <p
-                  class="max-w-xl font-body-md text-body-md text-on-surface-variant"
-                >
-                  Analizamos tu marca, situación actual, canales, competencia y
-                  oportunidades de mejora.
-                </p>
-              </div>
-            </article>
+            <div class="method-step-grid">
+              <article class="method-step-card">
+                <div class="relative z-10 mb-6 flex items-start justify-between gap-5">
+                  <span class="method-step-number">01</span>
+                  <p
+                    class="font-label-caps text-label-caps text-primary-container"
+                  >
+                    OBSERVAR
+                  </p>
+                </div>
+                <div class="relative z-10">
+                  <h3
+                    class="mb-3 font-headline-md text-2xl text-pure-white sm:text-headline-md"
+                  >
+                    Diagnóstico
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Analizamos tu marca, situación actual, canales, competencia
+                    y oportunidades de mejora.
+                  </p>
+                </div>
+              </article>
 
-            <article
-              class="group relative grid grid-cols-[48px_1fr] gap-5 border-t border-white/10 py-8 sm:grid-cols-[64px_1fr] sm:gap-8 sm:py-10"
-            >
-              <div
-                class="relative z-10 flex h-12 w-12 items-center justify-center border border-white/20 bg-pitch-black font-label-caps text-label-caps text-on-surface-variant transition-colors duration-300 group-hover:border-primary-container group-hover:text-primary-fixed sm:h-16 sm:w-16"
-              >
-                02
-              </div>
-              <div class="pt-1 sm:pt-2">
-                <p
-                  class="mb-3 font-label-caps text-label-caps text-primary-container"
-                >
-                  DEFINIR
-                </p>
-                <h3
-                  class="mb-3 font-headline-md text-2xl text-pure-white sm:text-headline-md"
-                >
-                  Estrategia
-                </h3>
-                <p
-                  class="max-w-xl font-body-md text-body-md text-on-surface-variant"
-                >
-                  Definimos objetivos, posicionamiento, mensajes, canales
-                  prioritarios y hoja de ruta.
-                </p>
-              </div>
-            </article>
+              <article class="method-step-card">
+                <div class="relative z-10 mb-6 flex items-start justify-between gap-5">
+                  <span class="method-step-number">02</span>
+                  <p
+                    class="font-label-caps text-label-caps text-primary-container"
+                  >
+                    DEFINIR
+                  </p>
+                </div>
+                <div class="relative z-10">
+                  <h3
+                    class="mb-3 font-headline-md text-2xl text-pure-white sm:text-headline-md"
+                  >
+                    Estrategia
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Definimos objetivos, posicionamiento, mensajes, canales
+                    prioritarios y hoja de ruta.
+                  </p>
+                </div>
+              </article>
 
-            <article
-              class="group relative grid grid-cols-[48px_1fr] gap-5 border-t border-white/10 py-8 sm:grid-cols-[64px_1fr] sm:gap-8 sm:py-10"
-            >
-              <div
-                class="relative z-10 flex h-12 w-12 items-center justify-center border border-white/20 bg-pitch-black font-label-caps text-label-caps text-on-surface-variant transition-colors duration-300 group-hover:border-primary-container group-hover:text-primary-fixed sm:h-16 sm:w-16"
-              >
-                03
-              </div>
-              <div class="pt-1 sm:pt-2">
-                <p
-                  class="mb-3 font-label-caps text-label-caps text-primary-container"
-                >
-                  ORDENAR
-                </p>
-                <h3
-                  class="mb-3 font-headline-md text-2xl text-pure-white sm:text-headline-md"
-                >
-                  Plan de acción
-                </h3>
-                <p
-                  class="max-w-xl font-body-md text-body-md text-on-surface-variant"
-                >
-                  Creamos un plan mensual con contenidos, campañas, piezas
-                  creativas y prioridades.
-                </p>
-              </div>
-            </article>
+              <article class="method-step-card">
+                <div class="relative z-10 mb-6 flex items-start justify-between gap-5">
+                  <span class="method-step-number">03</span>
+                  <p
+                    class="font-label-caps text-label-caps text-primary-container"
+                  >
+                    ORDENAR
+                  </p>
+                </div>
+                <div class="relative z-10">
+                  <h3
+                    class="mb-3 font-headline-md text-2xl text-pure-white sm:text-headline-md"
+                  >
+                    Plan de acción
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Creamos un plan mensual con contenidos, campañas, piezas
+                    creativas y prioridades.
+                  </p>
+                </div>
+              </article>
 
-            <article
-              class="group relative grid grid-cols-[48px_1fr] gap-5 border-t border-white/10 py-8 sm:grid-cols-[64px_1fr] sm:gap-8 sm:py-10"
-            >
-              <div
-                class="relative z-10 flex h-12 w-12 items-center justify-center border border-white/20 bg-pitch-black font-label-caps text-label-caps text-on-surface-variant transition-colors duration-300 group-hover:border-primary-container group-hover:text-primary-fixed sm:h-16 sm:w-16"
-              >
-                04
-              </div>
-              <div class="pt-1 sm:pt-2">
-                <p
-                  class="mb-3 font-label-caps text-label-caps text-primary-container"
-                >
-                  ACTIVAR
-                </p>
-                <h3
-                  class="mb-3 font-headline-md text-2xl text-pure-white sm:text-headline-md"
-                >
-                  Ejecución
-                </h3>
-                <p
-                  class="max-w-xl font-body-md text-body-md text-on-surface-variant"
-                >
-                  Diseñamos, redactamos, publicamos, activamos campañas y
-                  coordinamos acciones.
-                </p>
-              </div>
-            </article>
+              <article class="method-step-card">
+                <div class="relative z-10 mb-6 flex items-start justify-between gap-5">
+                  <span class="method-step-number">04</span>
+                  <p
+                    class="font-label-caps text-label-caps text-primary-container"
+                  >
+                    ACTIVAR
+                  </p>
+                </div>
+                <div class="relative z-10">
+                  <h3
+                    class="mb-3 font-headline-md text-2xl text-pure-white sm:text-headline-md"
+                  >
+                    Ejecución
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Diseñamos, redactamos, publicamos, activamos campañas y
+                    coordinamos acciones.
+                  </p>
+                </div>
+              </article>
 
-            <article
-              class="group relative grid grid-cols-[48px_1fr] gap-5 border-y border-white/10 py-8 sm:grid-cols-[64px_1fr] sm:gap-8 sm:py-10"
-            >
-              <div
-                class="relative z-10 flex h-12 w-12 items-center justify-center border border-white/20 bg-pitch-black font-label-caps text-label-caps text-on-surface-variant transition-colors duration-300 group-hover:border-primary-container group-hover:text-primary-fixed sm:h-16 sm:w-16"
-              >
-                05
-              </div>
-              <div class="pt-1 sm:pt-2">
-                <p
-                  class="mb-3 font-label-caps text-label-caps text-primary-container"
+              <article class="method-step-card is-wide">
+                <div
+                  class="relative z-10 grid gap-8 md:grid-cols-[220px_1fr] md:items-center"
                 >
-                  MEJORAR
-                </p>
-                <h3
-                  class="mb-3 font-headline-md text-2xl text-pure-white sm:text-headline-md"
-                >
-                  Medición y mejora
-                </h3>
-                <p
-                  class="max-w-xl font-body-md text-body-md text-on-surface-variant"
-                >
-                  Revisamos resultados, detectamos aprendizajes y optimizamos la
-                  estrategia.
-                </p>
-              </div>
-            </article>
+                  <div>
+                    <div class="mb-6 flex items-start justify-between gap-5">
+                      <span class="method-step-number">05</span>
+                      <p
+                        class="font-label-caps text-label-caps text-primary-container"
+                      >
+                        MEJORAR
+                      </p>
+                    </div>
+                    <h3
+                      class="font-headline-md text-2xl text-pure-white sm:text-headline-md"
+                    >
+                      Medición y mejora
+                    </h3>
+                  </div>
+                  <div>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                      Revisamos resultados, detectamos aprendizajes y
+                      optimizamos la estrategia. Lo aprendido vuelve al sistema
+                      para ajustar prioridades, mensajes y acciones del mes
+                      siguiente.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -1591,7 +1947,7 @@
                 Nuestro enfoque conecta estrategia, marca, captación, contenido
                 y medición para que cada acción tenga una función dentro del
                 sistema. No se trata de hacer más cosas, sino de hacer las
-                adecuadas con una dirección común.
+                adecuadas con una <strong class="copy-emphasis">dirección común</strong>.
               </p>
               <div
                 class="mt-8 border-l border-primary-container/60 pl-5 font-label-caps text-[11px] leading-6 tracking-widest text-primary-fixed-dim"
@@ -1827,7 +2183,7 @@
               <p
                 class="mb-8 max-w-xl font-body-lg text-body-lg text-on-surface-variant"
               >
-                Cuéntanos dónde está tu empresa y qué quieres conseguir.
+                Cuéntanos dónde está tu empresa y <strong class="copy-emphasis">qué quieres conseguir</strong>.
                 Revisaremos tu caso y te contactaremos para valorar el siguiente
                 paso con criterio.
               </p>
