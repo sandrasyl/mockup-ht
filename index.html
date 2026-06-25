@@ -569,6 +569,162 @@
           0 0 0 1px rgba(34, 81, 234, 0.42) inset,
           0 24px 70px rgba(34, 81, 234, 0.12);
       }
+      .audience-fit-panel {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(184, 196, 255, 0.16);
+        background:
+          linear-gradient(
+            135deg,
+            rgba(34, 81, 234, 0.14),
+            rgba(255, 255, 255, 0.035) 34%,
+            rgba(0, 0, 0, 0.4)
+          ),
+          rgba(0, 0, 0, 0.5);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
+      }
+      .audience-fit-panel::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent
+          ),
+          radial-gradient(
+            circle at 80% 10%,
+            rgba(34, 81, 234, 0.26),
+            transparent 36%
+          );
+        opacity: 0.72;
+      }
+      .audience-fit-row {
+        position: relative;
+        overflow: hidden;
+        border-left: 1px solid rgba(34, 81, 234, 0.7);
+        background: rgba(255, 255, 255, 0.035);
+      }
+      .audience-fit-row::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 80px;
+        pointer-events: none;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(34, 81, 234, 0.1)
+        );
+      }
+      .audience-photo-panel {
+        position: relative;
+        overflow: hidden;
+        min-height: 660px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #000000;
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, 0.025) inset,
+          0 38px 110px rgba(0, 0, 0, 0.42);
+      }
+      .audience-photo-panel::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            circle at 72% 48%,
+            rgba(34, 81, 234, 0.18),
+            transparent 34%
+          ),
+          linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.98) 0%,
+            rgba(0, 0, 0, 0.74) 36%,
+            rgba(0, 0, 0, 0.22) 72%,
+            rgba(0, 0, 0, 0.5) 100%
+          ),
+          linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.18) 48%,
+            rgba(0, 0, 0, 0.7) 100%
+          );
+      }
+      .audience-photo-panel::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        pointer-events: none;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.16) 1px,
+          transparent 1px
+        );
+        background-size: 32px 32px;
+        opacity: 0.12;
+        mix-blend-mode: screen;
+      }
+      .audience-photo-card {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.42);
+        backdrop-filter: blur(12px);
+      }
+      @media (max-width: 767px) {
+        .audience-photo-panel {
+          min-height: auto;
+        }
+        .audience-photo-panel::before {
+          background:
+            linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0.88) 0%,
+              rgba(0, 0, 0, 0.64) 46%,
+              rgba(0, 0, 0, 0.92) 100%
+            );
+        }
+      }
+      .premium-gate-panel {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(184, 196, 255, 0.22);
+        background:
+          linear-gradient(
+            145deg,
+            rgba(0, 0, 0, 0.56),
+            rgba(0, 0, 0, 0.26) 48%,
+            rgba(184, 196, 255, 0.1)
+          ),
+          rgba(0, 0, 0, 0.26);
+        backdrop-filter: blur(10px);
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, 0.035) inset,
+          0 34px 90px rgba(0, 0, 0, 0.34);
+      }
+      .premium-gate-panel::before {
+        content: '';
+        position: absolute;
+        inset: -35% -20% auto auto;
+        width: 260px;
+        height: 260px;
+        pointer-events: none;
+        border: 1px solid rgba(184, 196, 255, 0.18);
+        transform: rotate(28deg);
+      }
+      .premium-gate-price {
+        letter-spacing: -0.08em;
+        text-shadow: 0 0 28px rgba(184, 196, 255, 0.34);
+      }
+      .premium-gate-row {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+      }
       .method-side-panel {
         position: relative;
         overflow: hidden;
@@ -1633,74 +1789,91 @@
       <section
         class="px-gutter py-20 lg:py-section-padding bg-pitch-black relative overflow-hidden border-t border-white/5"
       >
-        <div class="max-w-container-max mx-auto text-center relative z-10">
-          <h2
-            class="font-headline-lg text-headline-lg text-pure-white mb-6 max-w-4xl mx-auto tracking-tight"
-          >
-            Para empresas que quieren tomarse el marketing en serio.
-          </h2>
-          <p
-            class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mb-12"
-          >
-            HeadTeam es para negocios que necesitan algo más que publicar
-            contenido: empresas que quieren <strong class="copy-emphasis">profesionalizar su marketing</strong>,
-            mejorar su posicionamiento, captar clientes, diferenciarse de su
-            competencia y construir una <strong class="copy-emphasis">presencia digital con más intención</strong>.
-          </p>
-          <div
-            class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left mb-8"
-          >
+        <div
+          class="absolute inset-0 bg-dot-grid bg-dot-grid-size opacity-10 pointer-events-none"
+        ></div>
+        <div
+          class="absolute -left-40 top-20 h-80 w-80 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"
+        ></div>
+        <div class="relative z-10 max-w-container-max mx-auto">
+          <div class="audience-photo-panel">
+            <img
+              alt="Equipo de marketing trabajando en una sesión estratégica"
+              class="absolute inset-0 z-0 h-full w-full object-cover object-[58%_center] opacity-90"
+              loading="lazy"
+              src="assets/headteam-strategy-workshop.png"
+            />
             <div
-              class="future-card bg-pitch-black/50 p-6 rounded-lg backdrop-blur-sm border border-white/10"
+              class="relative z-10 flex min-h-[660px] flex-col justify-between p-6 sm:p-10 lg:p-14"
             >
-              <p class="text-pure-white font-medium mb-2">
-                Sin departamento interno
-              </p>
-              <p class="text-on-surface-variant font-body-md text-body-md">
-                Acompañamos a empresas que necesitan una dirección de marketing
-                externa, estable y multidisciplinar.
-              </p>
-            </div>
-            <div
-              class="future-card bg-pitch-black/50 p-6 rounded-lg backdrop-blur-sm border border-white/10"
-            >
-              <p class="text-pure-white font-medium mb-2">
-                Con equipo que necesita refuerzo
-              </p>
-              <p class="text-on-surface-variant font-body-md text-body-md">
-                Sumamos visión estratégica, criterio creativo y capacidad de
-                ejecución para ordenar prioridades.
-              </p>
-            </div>
-            <div
-              class="future-card bg-pitch-black/50 p-6 rounded-lg backdrop-blur-sm border border-white/10"
-            >
-              <p class="text-pure-white font-medium mb-2">
-                Con visión de crecimiento
-              </p>
-              <p class="text-on-surface-variant font-body-md text-body-md">
-                Trabajamos con marcas que entienden el marketing como una
-                inversión y quieren hacerlo avanzar con método.
-              </p>
+              <div class="max-w-3xl">
+                <p
+                  class="mb-4 font-label-caps text-label-caps text-primary-container"
+                >
+                  ENCAJE HEADTEAM
+                </p>
+                <h2
+                  class="font-headline-lg text-headline-lg text-pure-white mb-6 tracking-tight"
+                >
+                  Para empresas que quieren tomarse el marketing en serio.
+                </h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                  HeadTeam es para negocios que necesitan algo más que publicar
+                  contenido: empresas que quieren profesionalizar su marketing,
+                  captar clientes, diferenciarse y construir una presencia
+                  digital con más intención.
+                </p>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-2xl">
+                  Si buscas únicamente gestionar una red social, probablemente
+                  no seamos la opción adecuada. Si buscas un equipo que piense,
+                  planifique, ejecute y mida contigo, aquí empieza el encaje.
+                </p>
+                <a
+                  class="future-button target-audience-cta bg-pitch-black inline-flex items-center justify-center gap-2 text-pure-white font-button text-button px-8 py-4 transition-all duration-300"
+                  href="#contacto"
+                >
+                  Solicitar diagnóstico estratégico
+                  <span class="material-symbols-outlined text-primary-fixed-dim"
+                    >arrow_forward</span
+                  >
+                </a>
+              </div>
+              <div
+                class="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3 lg:max-w-5xl"
+              >
+                <div class="audience-photo-card p-5">
+                  <p
+                    class="mb-3 font-label-caps text-label-caps text-primary-fixed-dim"
+                  >
+                    01 / Sin equipo interno
+                  </p>
+                  <p class="font-body-md text-body-md text-pure-white">
+                    Dirección de marketing externa, estable y multidisciplinar.
+                  </p>
+                </div>
+                <div class="audience-photo-card p-5">
+                  <p
+                    class="mb-3 font-label-caps text-label-caps text-primary-fixed-dim"
+                  >
+                    02 / Refuerzo
+                  </p>
+                  <p class="font-body-md text-body-md text-pure-white">
+                    Criterio, coordinación y capacidad para ejecutar mejor.
+                  </p>
+                </div>
+                <div class="audience-photo-card p-5">
+                  <p
+                    class="mb-3 font-label-caps text-label-caps text-primary-fixed-dim"
+                  >
+                    03 / Crecimiento
+                  </p>
+                  <p class="font-body-md text-body-md text-pure-white">
+                    Pasar de acciones sueltas a un sistema con prioridades.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <p
-            class="font-body-md text-body-md text-on-surface-variant max-w-3xl mx-auto mb-12"
-          >
-            Si buscas una solución puntual o únicamente gestionar una red
-            social, probablemente no seamos la opción adecuada. Si buscas un
-            equipo que <strong class="copy-emphasis">piense, planifique, ejecute y mida</strong> contigo, podemos
-            ayudarte.
-          </p>
-          <a
-            class="future-button target-audience-cta bg-pitch-black inline-flex items-center justify-center gap-2 text-pure-white font-button text-button px-8 py-4 transition-all duration-300"
-            href="#contacto"
-          >
-            Solicitar diagnóstico estratégico
-            <span class="material-symbols-outlined text-primary-fixed-dim"
-              >arrow_forward</span
-            >
-          </a>
         </div>
       </section>
       <!-- END: TargetAudienceSection -->
@@ -1715,31 +1888,109 @@
             class="w-full h-full object-cover object-center"
           />
         </div>
-        <div class="relative z-10 max-w-container-max mx-auto text-center max-w-3xl">
-          <h2 class="font-headline-lg text-headline-lg text-pure-white mb-6">
-            El marketing serio necesita continuidad. <br />
-            <span class="text-primary-fixed-dim"
-              >Y recursos para hacerlo bien.</span
+        <div
+          class="absolute inset-0 bg-dot-grid bg-dot-grid-size opacity-10 pointer-events-none"
+        ></div>
+        <div class="relative z-10 max-w-container-max mx-auto">
+          <div class="mx-auto max-w-4xl text-center">
+            <p
+              class="mb-4 font-label-caps text-label-caps text-primary-fixed-dim"
             >
-          </h2>
-          <p class="font-body-lg text-body-lg text-on-primary-container/90 mb-4">
-            Para garantizar un trabajo estratégico, constante y bien ejecutado,
-            nuestros proyectos están orientados a empresas que buscan una
-            <strong class="copy-emphasis">colaboración mensual estable</strong> o proyectos de alto valor.
-          </p>
-          <p class="font-body-lg text-body-lg text-on-primary-container/90 mb-8">
-            Trabajamos con compañías que entienden el marketing como una
-            <strong class="copy-emphasis">inversión</strong> y no como una tarea pendiente. Así podemos pensar,
-            ejecutar, medir y <strong class="copy-emphasis">mejorar con continuidad</strong>.
-          </p>
-          <div
-            class="future-button-secondary inline-block bg-surface-container-low border border-white/10 px-6 py-3"
-          >
-            <p class="font-button text-pure-white flex items-center gap-2">
-              <span class="material-symbols-outlined text-primary-container"
-                >info</span
+              FILTRO DE COLABORACIÓN
+            </p>
+            <h2 class="font-headline-lg text-headline-lg text-pure-white mb-6">
+              El marketing serio necesita continuidad.
+              <span class="block text-primary-fixed-dim"
+                >Y recursos para hacerlo bien.</span
               >
-              Proyectos mensuales recomendados a partir de 3.000 €
+            </h2>
+            <p class="font-body-lg text-body-lg text-on-primary-container/90 mb-4">
+              Para garantizar un trabajo estratégico, constante y bien
+              ejecutado, nuestros proyectos están orientados a empresas que
+              buscan una colaboración mensual estable o proyectos de alto valor.
+            </p>
+          </div>
+          <div class="premium-gate-panel mt-12 p-6 sm:p-8 lg:p-10">
+            <div
+              class="relative z-10 grid grid-cols-1 overflow-hidden border border-white/10 bg-pitch-black/20 lg:grid-cols-[1fr_1.35fr_1fr]"
+            >
+              <div class="border-b border-white/10 p-6 lg:border-b-0 lg:border-r">
+                <p
+                  class="font-label-caps text-label-caps text-primary-fixed-dim"
+                >
+                  01 / Continuidad
+                </p>
+                <p class="mt-4 font-headline-md text-2xl text-pure-white">
+                  Plan mensual
+                </p>
+                <p class="mt-3 font-body-md text-body-md text-on-primary-container/75">
+                  Sin empezar de cero cada mes ni improvisar prioridades.
+                </p>
+              </div>
+              <div
+                class="relative flex min-h-[260px] flex-col items-center justify-center border-b border-white/10 p-8 text-center lg:border-b-0"
+              >
+                <p class="font-label-caps text-label-caps text-on-primary-container/70">
+                  Inversión recomendada desde
+                </p>
+                <p
+                  class="premium-gate-price font-display text-[clamp(4.5rem,12vw,9rem)] leading-none text-pure-white"
+                >
+                  3.000€
+                </p>
+                <p class="mt-4 max-w-md font-body-md text-body-md text-on-primary-container/80">
+                  El punto mínimo para dedicar estrategia, producción,
+                  seguimiento y mejora con consistencia.
+                </p>
+              </div>
+              <div class="p-6 lg:border-l border-white/10">
+                <p
+                  class="font-label-caps text-label-caps text-primary-fixed-dim"
+                >
+                  02 / Recursos
+                </p>
+                <p class="mt-4 font-headline-md text-2xl text-pure-white">
+                  Equipo implicado
+                </p>
+                <p class="mt-3 font-body-md text-body-md text-on-primary-container/75">
+                  Decisiones, feedback y medición para avanzar con foco.
+                </p>
+              </div>
+            </div>
+            <div
+              class="relative z-10 mt-6 grid grid-cols-1 gap-3 md:grid-cols-3"
+            >
+              <div class="border border-white/10 bg-pitch-black/25 px-5 py-4">
+                <p class="font-label-caps text-label-caps text-primary-fixed-dim">
+                  Estrategia constante
+                </p>
+                <p class="mt-2 font-body-md text-body-md text-pure-white">
+                  Dirección antes que volumen.
+                </p>
+              </div>
+              <div class="border border-white/10 bg-pitch-black/25 px-5 py-4">
+                <p class="font-label-caps text-label-caps text-primary-fixed-dim">
+                  Producción bien ejecutada
+                </p>
+                <p class="mt-2 font-body-md text-body-md text-pure-white">
+                  Acciones conectadas entre sí.
+                </p>
+              </div>
+              <div class="border border-white/10 bg-pitch-black/25 px-5 py-4">
+                <p class="font-label-caps text-label-caps text-primary-fixed-dim">
+                  Mejora continua
+                </p>
+                <p class="mt-2 font-body-md text-body-md text-pure-white">
+                  Datos para decidir mejor.
+                </p>
+              </div>
+            </div>
+            <p
+              class="relative z-10 mx-auto mt-8 max-w-3xl text-center font-body-lg text-body-lg text-on-primary-container/90"
+            >
+              Trabajamos con compañías que entienden el marketing como una
+              inversión y no como una tarea pendiente: pensar, ejecutar, medir
+              y mejorar sin volver cada mes a la casilla de salida.
             </p>
           </div>
         </div>
