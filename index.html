@@ -182,146 +182,71 @@
         mix-blend-mode: overlay;
         opacity: 0.28;
       }
-      .future-nav {
-        background: rgba(0, 0, 0, 0.84);
-        box-shadow:
-          0 1px 0 rgba(255, 255, 255, 0.08),
-          0 16px 60px rgba(0, 0, 0, 0.45);
-      }
-      .future-link {
-        font-family:
-          JetBrains Mono,
-          monospace;
-        font-size: 12px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-      }
-      .future-button {
-        --future-button-fill: #2251ea;
-        --future-button-stroke: rgba(255, 255, 255, 0.2);
-        --future-inner-cut-size: 13.414px;
-        --future-cut-size: 14px;
-        position: relative;
-        z-index: 0;
-        isolation: isolate;
-        border-radius: 0;
-        border: 0 !important;
-        background: transparent !important;
-        clip-path: polygon(
-          0 0,
-          calc(100% - 14px) 0,
-          100% 14px,
-          100% 100%,
-          14px 100%,
-          0 calc(100% - 14px)
-        );
-        box-shadow: none !important;
-        filter: drop-shadow(0 0 17px rgba(34, 81, 234, 0.28));
-      }
-      .future-button:hover {
-        --future-button-fill: #1b4de6;
-        --future-button-stroke: rgba(255, 255, 255, 0.36);
-        filter: drop-shadow(0 0 24px rgba(34, 81, 234, 0.46));
-      }
-      .future-button.bg-pitch-black {
-        --future-button-fill: #000000;
-        --future-button-stroke: rgba(255, 255, 255, 0.16);
-        filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.5));
-      }
-      .future-button.bg-pitch-black:hover {
-        --future-button-fill: #1b1b1b;
-        --future-button-stroke: rgba(255, 255, 255, 0.3);
-      }
-      .future-button.target-audience-cta {
-        --future-button-fill: linear-gradient(
-          135deg,
-          #2251ea,
-          #163cbe
-        );
-        --future-button-stroke: rgba(184, 196, 255, 0.55);
-        filter:
-          drop-shadow(0 0 24px rgba(34, 81, 234, 0.42))
-          drop-shadow(0 18px 32px rgba(0, 0, 0, 0.52)) !important;
-      }
-      .future-button.target-audience-cta:hover {
-        --future-button-fill: linear-gradient(
-          135deg,
-          #2b63ff,
-          #1b4de6
-        );
-        --future-button-stroke: rgba(255, 255, 255, 0.52);
-        filter:
-          drop-shadow(0 0 30px rgba(34, 81, 234, 0.56))
-          drop-shadow(0 20px 36px rgba(0, 0, 0, 0.56)) !important;
-      }
+      .future-button,
       .future-button-secondary {
-        --future-button-fill: rgba(0, 0, 0, 0.18);
-        --future-button-stroke: rgba(255, 255, 255, 0.22);
-        --future-inner-cut-size: 11.414px;
-        --future-cut-size: 12px;
-        position: relative;
-        z-index: 0;
-        isolation: isolate;
-        border-radius: 0;
         border: 0 !important;
-        background: transparent !important;
-        clip-path: polygon(
-          0 0,
-          calc(100% - 12px) 0,
-          100% 12px,
-          100% 100%,
-          12px 100%,
-          0 calc(100% - 12px)
-        );
+        border-radius: 5px !important;
+        background: #2f55f6 !important;
+        background-color: #2f55f6 !important;
+        background-image: none !important;
+        clip-path: none !important;
+        color: #ffffff !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        filter: none !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.01em;
+        line-height: 1 !important;
+        min-height: 56px;
+        text-transform: uppercase;
+        transform: none !important;
+        white-space: nowrap;
+        box-shadow: none !important;
+        overflow: hidden;
+        isolation: auto;
       }
-      .future-button-secondary[class*='bg-black/70'] {
-        --future-button-fill: rgba(0, 0, 0, 0.7);
-        --future-button-stroke: rgba(255, 255, 255, 0.14);
-      }
-      .future-button-secondary.bg-surface-container-low {
-        --future-button-fill: #1b1b1b;
-        --future-button-stroke: rgba(255, 255, 255, 0.14);
-      }
+      .future-button:hover,
+      .future-button-secondary:hover,
+      .future-button.bg-pitch-black:hover,
+      .future-button.target-audience-cta:hover,
       .future-button-secondary[class*='hover:bg-white/5']:hover {
-        --future-button-fill: rgba(255, 255, 255, 0.05);
-        --future-button-stroke: rgba(255, 255, 255, 0.5);
+        background: #2448df !important;
+        background-color: #2448df !important;
+        background-image: none !important;
+        color: #ffffff !important;
+        filter: none !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 14px 26px rgba(34, 81, 234, 0.22) !important;
+      }
+      .future-button:active,
+      .future-button-secondary:active {
+        transform: translateY(0) !important;
+        box-shadow: none !important;
       }
       .future-button::before,
       .future-button::after,
       .future-button-secondary::before,
       .future-button-secondary::after {
-        content: '';
-        position: absolute;
-        pointer-events: none;
+        content: none !important;
+        display: none !important;
       }
-      .future-button::before,
-      .future-button-secondary::before {
-        inset: 0;
-        z-index: -2;
-        background: var(--future-button-stroke);
-        clip-path: polygon(
-          0 0,
-          calc(100% - var(--future-cut-size)) 0,
-          100% var(--future-cut-size),
-          100% 100%,
-          var(--future-cut-size) 100%,
-          0 calc(100% - var(--future-cut-size))
-        );
+      .future-button .material-symbols-outlined,
+      .future-button-secondary .material-symbols-outlined {
+        display: none !important;
       }
-      .future-button::after,
-      .future-button-secondary::after {
-        inset: 1px;
-        z-index: -1;
-        background: var(--future-button-fill);
-        clip-path: polygon(
-          0 0,
-          calc(100% - var(--future-inner-cut-size)) 0,
-          100% var(--future-inner-cut-size),
-          100% 100%,
-          var(--future-inner-cut-size) 100%,
-          0 calc(100% - var(--future-inner-cut-size))
-        );
-        transition: background 200ms ease;
+      .hero-cta-row .future-button,
+      .hero-cta-row .future-button-secondary {
+        font-size: 13px !important;
+        min-height: 52px;
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+      }
+      @media (max-width: 767px) {
+        .hero-cta-row .future-button,
+        .hero-cta-row .future-button-secondary {
+          width: 100%;
+        }
       }
       .future-panel {
         position: relative;
@@ -1166,53 +1091,7 @@
   <body
     class="bg-pitch-black text-on-surface font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-pure-white"
   >
-    <!-- BEGIN: MainHeader -->
-    <nav
-      class="future-nav fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/10 transition-all duration-300"
-    >
-      <div
-        class="flex justify-between items-center px-gutter py-stack-sm max-w-container-max mx-auto h-20"
-      >
-        <a class="flex items-center gap-2" href="#">
-          <img
-            alt="HeadTeam Logo"
-            class="h-8"
-            src="https://lh3.googleusercontent.com/aida/AP1WRLvdsZNUYgDZ5GtGp7NpB9sS-kowJCFO7eGy1TAmV-wansmjQHmal1l09QONJ4ruj6tvJDTHM4L2zRkKdG_EFzoDm3sRlx2p_idbBKEtc6bJuD6N3mXS3Qb1cAYCuiKB_N_Ol_H89K-xveafu5OJXUg1lFjK03Cw8dSbHiEwqjnw26OREF6Ah5XZS-Z2K9MPhCDFRfHJ1Xpc9yEFOua99UxVH4MW-dR7u6VgNj7iIxmc8MIIQiTTI8T6qT0"
-          />
-        </a>
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            class="future-link text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-300"
-            href="#"
-            >Estrategia</a
-          >
-          <a
-            class="future-link text-on-surface-variant font-medium hover:text-primary transition-colors duration-300"
-            href="#"
-            >Servicios</a
-          >
-          <a
-            class="future-link text-on-surface-variant font-medium hover:text-primary transition-colors duration-300"
-            href="#contacto"
-            >Contacto</a
-          >
-        </div>
-        <div class="hidden md:flex items-center">
-          <a
-            class="future-button bg-primary-container text-pure-white font-button text-button px-6 py-3 hover:bg-inverse-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform"
-            href="#contacto"
-          >
-            Solicitar diagnóstico estratégico
-          </a>
-        </div>
-        <!-- Mobile Menu Button -->
-        <button class="md:hidden text-on-surface p-2">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
-      </div>
-    </nav>
-    <!-- END: MainHeader -->
-    <main class="pt-20">
+    <main>
       <!-- BEGIN: HeroSection -->
       <section
         class="relative flex min-h-[90vh] items-center overflow-hidden bg-pitch-black px-gutter py-20 lg:py-section-padding"
@@ -1232,7 +1111,7 @@
         <div
           class="relative z-20 mx-auto grid max-w-container-max grid-cols-1 items-center gap-stack-lg lg:grid-cols-2"
         >
-          <div class="space-y-stack-md">
+          <div class="relative z-30 space-y-stack-md">
             <div
               class="future-kicker inline-flex items-center gap-2 px-3 py-2 bg-primary-container/10 border border-primary-container/30 text-primary-fixed-dim font-label-caps text-label-caps"
             >
@@ -1260,7 +1139,7 @@
                 >funcionar como un sistema.</strong
               >
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <div class="hero-cta-row flex flex-col sm:flex-row gap-4 pt-4">
               <a
                 class="future-button bg-primary-container text-pure-white font-button text-button px-8 py-4 hover:bg-inverse-primary transition-all duration-300 flex items-center justify-center gap-2 group text-center leading-tight"
                 href="#contacto"
@@ -1272,7 +1151,7 @@
                 >
               </a>
               <a
-                class="future-button-secondary bg-transparent text-pure-white border border-white/20 font-button text-button px-8 py-4 hover:bg-white/5 hover:border-white/50 transition-all duration-300 flex items-center justify-center gap-2"
+                class="future-button-secondary text-pure-white font-button text-button px-8 py-4 transition-all duration-300 flex items-center justify-center gap-2"
                 href="#metodo"
               >
                 Ver cómo trabajamos
@@ -2679,50 +2558,6 @@
       </section>
       <!-- END: FinalConversionSection -->
     </main>
-    <!-- BEGIN: MainFooter -->
-    <footer
-      class="bg-pitch-black w-full py-stack-lg border-t border-surface-container-lowest"
-    >
-      <div
-        class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-8"
-      >
-        <div class="flex items-center gap-2">
-          <img
-            alt="HeadTeam Logo"
-            class="h-8"
-            src="https://lh3.googleusercontent.com/aida/AP1WRLvdsZNUYgDZ5GtGp7NpB9sS-kowJCFO7eGy1TAmV-wansmjQHmal1l09QONJ4ruj6tvJDTHM4L2zRkKdG_EFzoDm3sRlx2p_idbBKEtc6bJuD6N3mXS3Qb1cAYCuiKB_N_Ol_H89K-xveafu5OJXUg1lFjK03Cw8dSbHiEwqjnw26OREF6Ah5XZS-Z2K9MPhCDFRfHJ1Xpc9yEFOua99UxVH4MW-dR7u6VgNj7iIxmc8MIIQiTTI8T6qT0"
-          />
-        </div>
-        <div class="flex flex-wrap justify-center gap-6">
-          <a
-            class="text-on-surface-variant font-body-md text-body-md hover:text-pure-white transition-colors duration-300 opacity-80 hover:opacity-100"
-            href="#"
-            >LinkedIn</a
-          >
-          <a
-            class="text-on-surface-variant font-body-md text-body-md hover:text-pure-white transition-colors duration-300 opacity-80 hover:opacity-100"
-            href="#"
-            >Instagram</a
-          >
-          <a
-            class="text-on-surface-variant font-body-md text-body-md hover:text-pure-white transition-colors duration-300 opacity-80 hover:opacity-100"
-            href="#"
-            >Twitter</a
-          >
-          <a
-            class="text-primary font-body-md text-body-md hover:text-pure-white transition-colors duration-300 opacity-80 hover:opacity-100"
-            href="#contacto"
-            >Contacto</a
-          >
-        </div>
-        <div
-          class="font-label-caps text-label-caps text-on-surface-variant opacity-60"
-        >
-          © 2026 HeadTeam. Todos los derechos reservados.
-        </div>
-      </div>
-    </footer>
-    <!-- END: MainFooter -->
     <script>
       document.getElementById('contact-form').addEventListener('submit', function (event) {
         event.preventDefault();
