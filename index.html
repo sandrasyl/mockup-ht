@@ -127,13 +127,6 @@
               'body-md': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
               'body-lg': ['18px', { lineHeight: '1.6', fontWeight: '400' }],
             },
-            backgroundImage: {
-              'dot-grid':
-                'radial-gradient(circle, #353535 1px, transparent 1px)',
-            },
-            backgroundSize: {
-              'dot-grid-size': '24px 24px',
-            },
           },
         },
       };
@@ -160,49 +153,6 @@
       .copy-emphasis {
         color: #ffffff;
         font-weight: 700;
-      }
-      .section-dot-layer {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        pointer-events: none;
-        background-image: radial-gradient(
-          rgba(255, 255, 255, 0.16) 1px,
-          transparent 1px
-        );
-        background-size: 24px 24px;
-        mix-blend-mode: screen;
-        opacity: 0.12;
-      }
-      .section-dot-layer.is-soft {
-        opacity: 0.07;
-      }
-      .section-dot-layer.is-medium {
-        opacity: 0.14;
-      }
-      .section-dot-layer.is-strong {
-        opacity: 0.18;
-      }
-      .section-dot-layer.is-wide {
-        background-size: 32px 32px;
-      }
-      .section-blue-wash {
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-        pointer-events: none;
-        background:
-          radial-gradient(
-            circle at 82% 18%,
-            rgba(34, 81, 234, 0.14),
-            transparent 32%
-          ),
-          linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.34),
-            transparent 46%,
-            rgba(34, 81, 234, 0.06)
-          );
       }
       body {
         background:
@@ -701,20 +651,6 @@
             rgba(0, 0, 0, 0.7) 100%
           );
       }
-      .audience-photo-panel::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        z-index: 3;
-        pointer-events: none;
-        background-image: radial-gradient(
-          rgba(255, 255, 255, 0.16) 1px,
-          transparent 1px
-        );
-        background-size: 32px 32px;
-        opacity: 0.12;
-        mix-blend-mode: screen;
-      }
       .audience-photo-card {
         border: 1px solid rgba(255, 255, 255, 0.12);
         background: rgba(0, 0, 0, 0.42);
@@ -1167,13 +1103,22 @@
         width: 100%;
         border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 0;
-        background: rgba(0, 0, 0, 0.55);
+        background: rgba(5, 5, 7, 0.92) !important;
+        background-color: rgba(5, 5, 7, 0.92) !important;
         color: #ffffff;
+        color-scheme: dark;
         font-family: Manrope, sans-serif;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
         transition:
           border-color 180ms ease,
           box-shadow 180ms ease,
           background 180ms ease;
+      }
+      input.contact-field,
+      select.contact-field,
+      textarea.contact-field {
+        background: rgba(5, 5, 7, 0.92) !important;
+        background-color: rgba(5, 5, 7, 0.92) !important;
       }
       .contact-field::placeholder {
         color: rgba(196, 197, 216, 0.5);
@@ -1183,13 +1128,25 @@
       }
       .contact-field:focus {
         border-color: #2251ea;
-        background: rgba(10, 10, 12, 0.86);
-        box-shadow: 0 0 0 3px rgba(34, 81, 234, 0.18);
+        background: rgba(8, 10, 16, 0.96) !important;
+        background-color: rgba(8, 10, 16, 0.96) !important;
+        box-shadow:
+          0 0 0 1px rgba(34, 81, 234, 0.2) inset,
+          0 0 0 3px rgba(34, 81, 234, 0.18);
         outline: none;
       }
       .contact-field option {
         background: #131313;
         color: #ffffff;
+      }
+      .contact-field:-webkit-autofill,
+      .contact-field:-webkit-autofill:hover,
+      .contact-field:-webkit-autofill:focus {
+        -webkit-text-fill-color: #ffffff;
+        box-shadow:
+          0 0 0 1000px #050507 inset,
+          0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+        caret-color: #ffffff;
       }
       @keyframes marquee {
         from {
@@ -1258,7 +1215,7 @@
     <main class="pt-20">
       <!-- BEGIN: HeroSection -->
       <section
-        class="relative flex min-h-[90vh] items-center overflow-hidden bg-pitch-black bg-dot-grid bg-dot-grid-size px-gutter py-20 lg:py-section-padding"
+        class="relative flex min-h-[90vh] items-center overflow-hidden bg-pitch-black px-gutter py-20 lg:py-section-padding"
       >
         <div
           class="absolute -right-1/4 top-1/4 h-[800px] w-[800px] rounded-full bg-primary-container opacity-20 blur-[150px] pointer-events-none"
@@ -1427,9 +1384,6 @@
         <div
           class="absolute -right-56 top-16 h-[520px] w-[520px] rounded-full bg-primary-container opacity-10 blur-[150px] pointer-events-none"
         ></div>
-        <div
-          class="absolute inset-0 bg-dot-grid bg-dot-grid-size opacity-20 pointer-events-none"
-        ></div>
         <div class="relative z-10 max-w-container-max mx-auto">
           <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
             <div class="lg:col-span-5">
@@ -1574,9 +1528,6 @@
                     class="relative overflow-hidden border border-primary-container/50 bg-primary-container/10 p-5"
                   >
                     <div
-                      class="absolute inset-0 bg-dot-grid bg-dot-grid-size opacity-20 pointer-events-none"
-                    ></div>
-                    <div
                       class="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary-container/30 blur-[70px] pointer-events-none"
                     ></div>
                     <div class="relative z-10 flex h-full flex-col">
@@ -1647,19 +1598,18 @@
         <img
           alt=""
           aria-hidden="true"
-          class="absolute inset-0 h-full w-full object-cover object-[30%_center] opacity-100 saturate-150"
+          class="absolute inset-0 h-full w-full object-cover object-[30%_center] opacity-65 saturate-125 brightness-75"
           src="assets/backgrounds/strategy-glow-background.png"
         />
         <div
-          class="absolute inset-0 bg-gradient-to-b from-pitch-black/35 via-pitch-black/10 to-pitch-black/60 pointer-events-none"
+          class="absolute inset-0 bg-gradient-to-b from-pitch-black/70 via-pitch-black/42 to-pitch-black/85 pointer-events-none"
         ></div>
         <div
-          class="absolute inset-0 bg-gradient-to-r from-pitch-black/45 via-transparent to-pitch-black/20 pointer-events-none"
+          class="absolute inset-0 bg-gradient-to-r from-pitch-black/70 via-pitch-black/30 to-pitch-black/52 pointer-events-none"
         ></div>
         <div
-          class="absolute inset-0 bg-primary-container/15 mix-blend-screen pointer-events-none"
+          class="absolute inset-0 bg-primary-container/8 mix-blend-screen pointer-events-none"
         ></div>
-        <div class="section-dot-layer is-soft is-wide"></div>
         <div class="relative z-10 max-w-container-max mx-auto">
           <div
             class="mb-16 grid grid-cols-1 items-center gap-12 lg:mb-20 lg:grid-cols-12 lg:gap-16"
@@ -1834,9 +1784,6 @@
         class="px-gutter py-20 lg:py-section-padding bg-pitch-black relative overflow-hidden border-t border-white/5"
       >
         <div
-          class="section-dot-layer is-soft"
-        ></div>
-        <div
           class="absolute -left-40 top-20 h-80 w-80 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"
         ></div>
         <div class="relative z-10 max-w-container-max mx-auto">
@@ -1933,9 +1880,6 @@
             class="w-full h-full object-cover object-center"
           />
         </div>
-        <div
-          class="absolute inset-0 bg-dot-grid bg-dot-grid-size opacity-10 pointer-events-none"
-        ></div>
         <div class="relative z-10 max-w-container-max mx-auto">
           <div class="mx-auto max-w-4xl text-center">
             <p
@@ -2037,8 +1981,6 @@
         class="relative overflow-hidden bg-pitch-black px-gutter py-20 lg:py-section-padding"
         id="metodo"
       >
-        <div class="section-dot-layer is-medium"></div>
-        <div class="section-blue-wash"></div>
         <div
           class="absolute left-0 top-1/3 h-px w-full bg-gradient-to-r from-transparent via-primary-container/20 to-transparent pointer-events-none"
         ></div>
@@ -2263,9 +2205,6 @@
         <div
           class="absolute -left-52 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-primary-container opacity-10 blur-[140px] pointer-events-none"
         ></div>
-        <div
-          class="absolute inset-0 bg-dot-grid bg-dot-grid-size opacity-20 pointer-events-none"
-        ></div>
         <div class="relative z-10 max-w-container-max mx-auto">
           <div
             class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center lg:gap-16"
@@ -2446,9 +2385,6 @@
         class="relative overflow-hidden border-t border-white/5 bg-pitch-black px-gutter py-20 lg:py-section-padding"
         id="contacto"
       >
-        <div
-          class="section-dot-layer is-strong is-wide"
-        ></div>
         <div
           class="absolute -right-52 top-1/4 h-[520px] w-[520px] rounded-full bg-primary-container opacity-10 blur-[140px] pointer-events-none"
         ></div>
